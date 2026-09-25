@@ -24,31 +24,26 @@ const LEGAL_LINKS = ["Privacy Policy", "Disclaimer", "Term Of Service"];
 
 function Logo() {
   return (
-    <Stack direction="row" alignItems="center" spacing={1.5}>
+    <Box
+      to="/"
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        flexShrink: 0,
+        lineHeight: 0,
+      }}
+    >
       <Box
+        component="img"
+        src="/assets/logo.png"
+        alt="Lawak"
         sx={{
-          width: 62,
-          height: 68,
-          display: "grid",
-          placeItems: "center",
-          border: `2px solid ${ACCENT}`,
-          borderRadius: "12px 12px 32px 32px",
+          height: { xs: 44, md: 70 },
+          width: "auto",
+          display: "block",
         }}
-      >
-        <BalanceIcon sx={{ color: ACCENT, fontSize: 36 }} />
-      </Box>
-      <Typography
-        sx={{
-          color: "#fff",
-          fontWeight: 700,
-          fontSize: { xs: 46, md: 58 },
-          letterSpacing: 1.5,
-          lineHeight: 1,
-        }}
-      >
-        Lawak
-      </Typography>
-    </Stack>
+      />
+    </Box>
   );
 }
 
