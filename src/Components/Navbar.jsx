@@ -13,7 +13,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -23,6 +23,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 import { ACCENT, ACCENT_HOVER, LINE, theme } from "../Theme.js";
 
@@ -35,11 +36,17 @@ const NAV = [
 
 const SOCIALS = [FacebookIcon, TwitterIcon, YouTubeIcon, InstagramIcon];
 
+// "/" only matches exactly; other paths match their own subtree too
+function isActivePath(pathname, itemPath) {
+  if (itemPath === "/") return pathname === "/";
+  return pathname === itemPath || pathname.startsWith(`${itemPath}/`);
+}
+
 /* =========================
    LOGO
 ========================= */
 
-function Logo() {
+function Logo({ height = { xs: 44, md: 70 } }) {
   return (
     <Box
       component={Link}
@@ -56,7 +63,7 @@ function Logo() {
         src="/assets/logo.png"
         alt="Lawak"
         sx={{
-          height: { xs: 44, md: 70 },
+          height,
           width: "auto",
           display: "block",
         }}
@@ -75,7 +82,7 @@ function TopBar() {
       direction="row"
       alignItems="center"
       sx={{
-        py:3,
+        py: 3,
         display: { xs: "none", sm: "flex" },
         width: "100%",
       }}
@@ -129,6 +136,8 @@ function TopBar() {
 ========================= */
 
 function DesktopLinks() {
+  const { pathname } = useLocation();
+
   return (
     <Stack
       direction="row"
@@ -137,28 +146,46 @@ function DesktopLinks() {
       spacing={{ md: 3, lg: 5 }}
       sx={{ flex: 1 }}
     >
-      {NAV.map((item) => (
-        <Button
-          key={item.label}
-          component={Link}
-          to={item.path}
-          disableRipple
-          sx={{
-            color: "#fff",
-            textTransform: "none",
-            fontWeight: 500,
-            fontSize: 16,
-            p: 0,
-            minWidth: 0,
-            "&:hover": {
-              background: "none",
-              color: ACCENT,
-            },
-          }}
-        >
-          {item.label}
-        </Button>
-      ))}
+      {NAV.map((item) => {
+        const active = isActivePath(pathname, item.path);
+
+        return (
+          <Button
+            key={item.label}
+            component={Link}
+            to={item.path}
+            disableRipple
+            aria-current={active ? "page" : undefined}
+            sx={{
+              position: "relative",
+              color: active ? ACCENT : "#fff",
+              textTransform: "none",
+              fontWeight: 500,
+              fontSize: 16,
+              p: 0,
+              minWidth: 0,
+              "&:hover": {
+                background: "none",
+                color: ACCENT,
+              },
+              "&::after": {
+                content: '""',
+                position: "absolute",
+                left: 0,
+                right: 0,
+                bottom: -6,
+                height: 2,
+                bgcolor: ACCENT,
+                transform: active ? "scaleX(1)" : "scaleX(0)",
+                transformOrigin: "center",
+                transition: "transform .2s ease",
+              },
+            }}
+          >
+            {item.label}
+          </Button>
+        );
+      })}
     </Stack>
   );
 }
@@ -168,52 +195,147 @@ function DesktopLinks() {
 ========================= */
 
 function MobileDrawer({ open, onClose }) {
+  const { pathname } = useLocation();
+
   return (
     <Drawer
       anchor="right"
       open={open}
       onClose={onClose}
       PaperProps={{
-        sx: { width: 290, bgcolor: "#1a1412", color: "#fff" },
+        sx: {
+          width: { xs: "82%", sm: 340 },
+          maxWidth: 360,
+          bgcolor: "#fff",
+          color: "#1a1412",
+          display: "flex",
+          flexDirection: "column",
+        },
       }}
     >
-      {/* Close Button */}
-      <Stack direction="row" justifyContent="flex-end" p={1}>
-        <IconButton
-          onClick={onClose}
-          sx={{ color: "#fff" }}
-          aria-label="Close menu"
-        >
-          <CloseIcon />
-        </IconButton>
+      {/* Header: logo + close */}
+      <Stack direction="row" alignItems="center" sx={{ px: 2.5, py: 2.5 }}>
+        <Logo height={34} />
+        <Box sx={{ ml: "auto" }}>
+          <IconButton
+            onClick={onClose}
+            aria-label="Close menu"
+            size="small"
+            sx={{
+              color: "#1a1412",
+              bgcolor: "#f3f1f0",
+              "&:hover": {
+                bgcolor: "#f1e2db",
+                color: ACCENT,
+              },
+            }}
+          >
+            <CloseIcon fontSize="small" />
+          </IconButton>
+        </Box>
       </Stack>
 
       {/* Navigation */}
-      <List>
-        {NAV.map((item) => (
-          <ListItemButton
-            key={item.label}
-            component={Link}
-            to={item.path}
-            onClick={onClose}
-          >
-            <ListItemText
-              primary={item.label}
-              primaryTypographyProps={{ fontWeight: 500 }}
-            />
-          </ListItemButton>
-        ))}
+      <List sx={{ px: 1.5, pt: 1 }}>
+        {NAV.map((item) => {
+          const active = isActivePath(pathname, item.path);
+
+          return (
+            <ListItemButton
+              key={item.label}
+              component={Link}
+              to={item.path}
+              onClick={onClose}
+              aria-current={active ? "page" : undefined}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                borderRadius: 1.5,
+                mb: 0.5,
+                py: 1.5,
+                px: 2,
+                bgcolor: active ? "#fbe9e2" : "transparent",
+                "&:hover": { bgcolor: active ? "#fbe9e2" : "#f7f5f4" },
+              }}
+            >
+              <ListItemText
+                primary={item.label}
+                primaryTypographyProps={{
+                  fontWeight: active ? 700 : 500,
+                  fontSize: 16,
+                  color: active ? ACCENT : "#1a1412",
+                }}
+              />
+              {active && (
+                <ChevronRightIcon sx={{ fontSize: 20, color: ACCENT }} />
+              )}
+            </ListItemButton>
+          );
+        })}
       </List>
 
+      {/* Spacer pushes footer content down */}
+      <Box sx={{ flex: 1 }} />
+
+      {/* Contact info */}
+      <Stack
+        direction="row"
+        spacing={3}
+        sx={{ px: 3, py: 2.5, borderTop: "1px solid #eee" }}
+      >
+        <IconButton
+          size="small"
+          sx={{
+            bgcolor: "#f3f1f0",
+            color: ACCENT,
+            "&:hover": { bgcolor: "#fbe9e2" },
+          }}
+        >
+          <LocationOnIcon sx={{ fontSize: 20 }} />
+        </IconButton>
+        <IconButton
+          size="small"
+          sx={{
+            bgcolor: "#f3f1f0",
+            color: ACCENT,
+            "&:hover": { bgcolor: "#fbe9e2" },
+          }}
+        >
+          <PhoneIcon sx={{ fontSize: 20 }} />
+        </IconButton>
+
+        <Stack direction="row" spacing={1} sx={{ ml: "auto" }}>
+          {SOCIALS.map((Icon, i) => (
+            <IconButton
+              key={i}
+              size="small"
+              sx={{
+                bgcolor: "#f3f1f0",
+                color: "#1a1412",
+                "&:hover": { bgcolor: ACCENT, color: "#fff" },
+              }}
+            >
+              <Icon sx={{ fontSize: 16 }} />
+            </IconButton>
+          ))}
+        </Stack>
+      </Stack>
+
       {/* Quotation Button */}
-      <Box p={2}>
+      <Box sx={{ px: 3, pb: 3 }}>
         <Button
           fullWidth
           variant="contained"
+          disableElevation
           sx={{
-            py: 1.4,
+            py: 1.5,
             textTransform: "none",
             fontWeight: 600,
+            fontSize: 15.5,
+            borderRadius: "6px",
+            bgcolor: ACCENT,
+            "&:hover": { bgcolor: ACCENT_HOVER },
           }}
         >
           Get a Quotation
@@ -255,7 +377,7 @@ export default function Navbar() {
 
           {isMobile ? (
             /* MOBILE */
-            <Box sx={{ ml: "auto" }}>
+            <Box sx={{ ml: "auto", mt: 3 }}>
               <IconButton
                 onClick={() => setDrawer(true)}
                 sx={{ color: "#fff" }}
