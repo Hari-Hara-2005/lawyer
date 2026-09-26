@@ -5,6 +5,18 @@ import { ACCENT } from "../Theme";
 const DESCRIPTION =
   "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.";
 
+// ---- WhatsApp config ----
+// Use international format, digits only, no "+", no spaces, no leading 0.
+const WHATSAPP_NUMBER = "6212345 6789".replace(/\s+/g, ""); // TODO: replace with real number
+
+function openWhatsAppQuotation(serviceTitle) {
+  const message = `Hello, I'm interested in getting a quotation for your "${serviceTitle}".`;
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    message,
+  )}`;
+  window.open(url, "_blank", "noopener,noreferrer");
+}
+
 const SERVICE_ROWS = [
   {
     title: "Family Lawyer Services",
@@ -15,7 +27,31 @@ const SERVICE_ROWS = [
   {
     title: "Criminal Lawyer Services",
     image:
-      "https://images.unsplash.com/photo-1589391886645-d51941b78d5e?auto=format&fit=crop&w=1200&q=80",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTBqjwdjklpZ-T7wa-CbpopJ9P8k3NPn8nqWT-Y02S76oZ_jpST7yk3-g&s=10",
+    points: ["Land dispute", "Inheritance", "Family problem"],
+  },
+  {
+    title: "Family Lawyer Services",
+    image:
+      "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
+    points: ["Land dispute", "Inheritance", "Family problem"],
+  },
+  {
+    title: "Criminal Lawyer Services",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTBqjwdjklpZ-T7wa-CbpopJ9P8k3NPn8nqWT-Y02S76oZ_jpST7yk3-g&s=10",
+    points: ["Land dispute", "Inheritance", "Family problem"],
+  },
+  {
+    title: "Family Lawyer Services",
+    image:
+      "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
+    points: ["Land dispute", "Inheritance", "Family problem"],
+  },
+  {
+    title: "Criminal Lawyer Services",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTBqjwdjklpZ-T7wa-CbpopJ9P8k3NPn8nqWT-Y02S76oZ_jpST7yk3-g&s=10",
     points: ["Land dispute", "Inheritance", "Family problem"],
   },
 ];
@@ -93,6 +129,7 @@ const ServiceRow = ({ service, reverse }) => (
       <Button
         variant="contained"
         disableElevation
+        onClick={() => openWhatsAppQuotation(service.title)}
         sx={{
           bgcolor: ACCENT,
           color: "#fff",

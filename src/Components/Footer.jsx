@@ -6,14 +6,22 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import BalanceIcon from "@mui/icons-material/Balance";
 import { ACCENT, ACCENT_HOVER } from "../Theme";
-
+import { Link } from "react-router-dom";
 const BG = "#2c2422";
 const LINE = "1px solid rgba(255,255,255,.15)";
-
-const QUICK_LINKS = ["Home", "About Us", "Our Services", "Contact Us"];
-const SERVICES = ["Legal", "License Case", "Criminal Lawyer", "Company Legal"];
+const QUICK_LINKS = [
+  { label: "Home", path: "/" },
+  { label: "About Us", path: "/about" },
+  { label: "Our Services", path: "/services" },
+  { label: "Contact Us", path: "/contact" },
+];
+const SERVICES = [
+  { label: "Legal", path: "/legal" },
+  { label: "License Case", path: "/license-case" },
+  { label: "Criminal Lawyer", path: "/criminal-lawyer" },
+  { label: "Company Legal", path: "/company-legal" },
+];
 const SOCIALS = [
   { icon: FacebookIcon, label: "Facebook", href: "#" },
   { icon: TwitterIcon, label: "Twitter", href: "#" },
@@ -36,7 +44,7 @@ function Logo() {
       <Box
         component="img"
         src="/assets/logo.png"
-        alt="Lawak"
+        alt="logo"
         sx={{
           height: { xs: 44, md: 70 },
           width: "auto",
@@ -62,15 +70,14 @@ function FooterHeading({ children }) {
     </Typography>
   );
 }
-
 function LinkList({ items }) {
   return (
     <Stack component="ul" spacing={1.9} sx={{ listStyle: "none", m: 0, p: 0 }}>
       {items.map((item) => (
-        <li key={item}>
+        <li key={item.path}>
           <Box
-            component="a"
-            href="#"
+            component={Link}
+            to={item.path}
             sx={{
               display: "inline-flex",
               alignItems: "center",
@@ -83,7 +90,7 @@ function LinkList({ items }) {
             }}
           >
             <ChevronRightIcon sx={{ color: ACCENT, fontSize: 22, ml: -0.5 }} />
-            {item}
+            {item.label}
           </Box>
         </li>
       ))}
@@ -128,8 +135,8 @@ export default function Footer() {
                 mb: 4.5,
               }}
             >
-              Lawak – Was Designed For Legal & Law Firm Business And Services.
-              This kit work with elementor PRO & Standar Hello Theme.
+              Gen Attorneys – Was Designed For Legal & Law Firm Business And
+              Services. This kit work with elementor PRO & Standar Hello Theme.
             </Typography>
             <Stack direction="row" spacing={1.25}>
               {SOCIALS.map(({ icon: Icon, label, href }) => (
@@ -182,7 +189,9 @@ export default function Footer() {
               </Stack>
               <Stack direction="row" spacing={1.5} alignItems="center">
                 <EmailIcon sx={{ color: ACCENT, fontSize: 22 }} />
-                <Typography sx={{ fontSize: 15 }}>Hello@Lawak.com</Typography>
+                <Typography sx={{ fontSize: 15 }}>
+                  Hello@GenAttorneys.com
+                </Typography>
               </Stack>
             </Stack>
           </Box>
@@ -201,7 +210,7 @@ export default function Footer() {
           }}
         >
           <Typography sx={{ fontSize: 15 }}>
-            Allright Reserved - Lawak Elementor Kit
+            Allright Reserved - Gen Attorneys
           </Typography>
           <Stack direction="row" flexWrap="wrap" rowGap={1}>
             {LEGAL_LINKS.map((l, i) => (

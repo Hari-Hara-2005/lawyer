@@ -36,6 +36,19 @@ const NAV = [
 
 const SOCIALS = [FacebookIcon, TwitterIcon, YouTubeIcon, InstagramIcon];
 
+// ---- WhatsApp config ----
+// Use international format, digits only, no "+", no spaces, no leading 0.
+const WHATSAPP_NUMBER = "6212345 6789".replace(/\s+/g, ""); // TODO: replace with real number
+const WHATSAPP_MESSAGE =
+  "Hello, I'm interested in getting a quotation for your services.";
+
+function openWhatsAppQuotation() {
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    WHATSAPP_MESSAGE,
+  )}`;
+  window.open(url, "_blank", "noopener,noreferrer");
+}
+
 // "/" only matches exactly; other paths match their own subtree too
 function isActivePath(pathname, itemPath) {
   if (itemPath === "/") return pathname === "/";
@@ -328,6 +341,7 @@ function MobileDrawer({ open, onClose }) {
           fullWidth
           variant="contained"
           disableElevation
+          onClick={openWhatsAppQuotation}
           sx={{
             py: 1.5,
             textTransform: "none",
@@ -402,6 +416,7 @@ export default function Navbar() {
                 <Button
                   variant="contained"
                   disableElevation
+                  onClick={openWhatsAppQuotation}
                   sx={{
                     px: 4,
                     py: 1.3,
