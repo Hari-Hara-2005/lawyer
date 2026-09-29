@@ -1,132 +1,280 @@
 import { Box, Container, Typography } from "@mui/material";
-import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
-import LandscapeIcon from "@mui/icons-material/Landscape";
-import HexagonIcon from "@mui/icons-material/Hexagon";
+import BusinessIcon from "@mui/icons-material/Business";
+import ApartmentIcon from "@mui/icons-material/Apartment";
+import ConstructionIcon from "@mui/icons-material/Construction";
+import CorporateFareIcon from "@mui/icons-material/CorporateFare";
+import HomeWorkIcon from "@mui/icons-material/HomeWork";
+import DomainIcon from "@mui/icons-material/Domain";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import SectionTitle from "../Components/SectionTitle";
 
-/*
-  Add your real logos by giving each item a `src`, e.g.
-    { name: "Acme", src: "/logos/acme.png" }
-  Items without `src` render the grey placeholder logos below.
-*/
-const LOGOS = [
-  { name: "Logoipsum", variant: "inline" },
-  { name: "logoipsum", variant: "stacked" },
-  { name: "Logoipsum", variant: "inlineDark" },
-  { name: "logoipsum", variant: "pill" },
+const COMPANIES = [
+  {
+    name: "SSPDL Limited",
+    icon: BusinessIcon,
+  },
+  {
+    name: "Fagun Company Limited",
+    icon: CorporateFareIcon,
+  },
+  {
+    name: "Beauty Etoile Private Limited",
+    icon: ApartmentIcon,
+  },
+  {
+    name: "SRI SATYA SAI CONSTRUCTIONS",
+    icon: ConstructionIcon,
+  },
+  {
+    name: "KOWSKI BUILDERS",
+    icon: HomeWorkIcon,
+  },
+  {
+    name: "JP ENTERPRISES",
+    icon: DomainIcon,
+  },
 ];
 
-const GREY = "#8a8a8a";
-
-function PlaceholderLogo({ variant, name }) {
-  const text = { fontWeight: 700, letterSpacing: -0.5, lineHeight: 1 };
-
-  if (variant === "stacked") {
-    return (
-      <Box sx={{ textAlign: "center" }}>
-        <LandscapeIcon
-          sx={{ fontSize: 56, color: GREY, display: "block", mx: "auto" }}
-        />
-        <Typography sx={{ ...text, color: "#333", fontSize: 20 }}>
-          {name}
-        </Typography>
-      </Box>
-    );
-  }
-  if (variant === "pill") {
-    return (
-      <Box sx={{ bgcolor: GREY, borderRadius: "50%", px: 3.5, py: 2.25 }}>
-        <Typography sx={{ ...text, color: "#fff", fontSize: 26 }}>
-          {name}
-        </Typography>
-      </Box>
-    );
-  }
-  const Icon = variant === "inline" ? RocketLaunchIcon : HexagonIcon;
-  return (
-    <Box sx={{ display: "flex", alignItems: "center", gap: 0.75 }}>
-      <Icon sx={{ fontSize: 40, color: GREY }} />
-      <Typography
-        sx={{
-          ...text,
-          color: variant === "inline" ? GREY : "#222",
-          fontSize: 24,
-        }}
-      >
-        {name}
-      </Typography>
-    </Box>
-  );
-}
+const ACCENT = "#B9592F";
 
 export default function FeaturedCompany() {
   return (
-    <Box component="section" sx={{ bgcolor: "#fff", py: { xs: 7, md: 10 } }}>
+    <Box
+      component="section"
+      sx={{
+        position: "relative",
+        bgcolor: "#faf9f7",
+        py: { xs: 8, md: 12 },
+        overflow: "hidden",
+      }}
+    >
+      {/* Decorative background */}
+      <Box
+        sx={{
+          position: "absolute",
+          width: 320,
+          height: 320,
+          borderRadius: "50%",
+          border: "1px solid rgba(185,89,47,0.08)",
+          top: -150,
+          right: -100,
+        }}
+      />
+
+      <Box
+        sx={{
+          position: "absolute",
+          width: 220,
+          height: 220,
+          borderRadius: "50%",
+          border: "1px solid rgba(185,89,47,0.06)",
+          bottom: -100,
+          left: -70,
+        }}
+      />
+
       <Container
         maxWidth={false}
-        sx={{ maxWidth: 1460, px: { xs: 2.5, sm: 4 } }}
+        sx={{
+          position: "relative",
+          maxWidth: 1400,
+          px: { xs: 2.5, sm: 4, md: 5 },
+        }}
       >
-        <SectionTitle
-          eyebrow="They Trust Us"
-          title="Featured Company"
-          align="center"
-          sx={{ mb: 2 }}
-        />
-
-        <Typography
+        {/* Section heading */}
+        <Box
           sx={{
-            color: "#6b6b6b",
-            fontSize: { xs: 15, md: 16 },
-            lineHeight: 1.45,
             textAlign: "center",
-            maxWidth: 720,
+            maxWidth: 650,
             mx: "auto",
-            mb: { xs: 5, md: 6 },
+            mb: { xs: 5, md: 7 },
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-          tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-        </Typography>
+          <SectionTitle
+            eyebrow="Trusted By"
+            title="Featured Company"
+            align="center"
+          />
 
+          <Typography
+            sx={{
+              mt: 2,
+              color: "#777",
+              fontSize: { xs: 14, md: 16 },
+              lineHeight: 1.8,
+            }}
+          >
+            Building trusted relationships with businesses and organizations
+            through professional legal support and dedicated service.
+          </Typography>
+        </Box>
+
+        {/* Company Cards */}
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "repeat(2, 1fr)", md: "repeat(4, 1fr)" },
-            rowGap: { xs: 5, md: 0 },
-            alignItems: "center",
-            justifyItems: "center",
+            gridTemplateColumns: {
+              xs: "1fr",
+              sm: "repeat(2, 1fr)",
+              md: "repeat(3, 1fr)",
+            },
+            gap: { xs: 2, md: 2.5 },
           }}
         >
-          {LOGOS.map((logo, i) => (
+          {COMPANIES.map(({ name, icon: Icon }, index) => (
             <Box
-              key={i}
+              key={name}
               sx={{
-                height: 80,
+                position: "relative",
+                minHeight: { xs: 125, md: 145 },
+                p: { xs: 2.5, md: 3 },
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center",
+                gap: 2.5,
+
+                backgroundColor: "#fff",
+                border: "1px solid #e9e5e1",
+                borderRadius: "4px",
+
+                boxShadow: "0 8px 30px rgba(0,0,0,0.035)",
+
+                transition:
+                  "transform .3s ease, box-shadow .3s ease, border-color .3s ease",
+
+                "&:hover": {
+                  transform: "translateY(-6px)",
+                  borderColor: "rgba(185,89,47,0.35)",
+                  boxShadow: "0 15px 40px rgba(0,0,0,0.08)",
+                },
+
+                "&:hover .icon-box": {
+                  backgroundColor: ACCENT,
+                  color: "#fff",
+                  transform: "scale(1.05)",
+                },
+
+                "&:hover .arrow": {
+                  opacity: 1,
+                  transform: "translate(2px, -2px)",
+                },
               }}
             >
-              {logo.src ? (
-                <Box
-                  component="img"
-                  src={logo.src}
-                  alt={logo.name}
+              {/* Number */}
+              <Typography
+                sx={{
+                  position: "absolute",
+                  top: 12,
+                  right: 16,
+                  fontSize: 12,
+                  fontWeight: 700,
+                  color: "#d5d0cc",
+                  letterSpacing: 1,
+                }}
+              >
+                0{index + 1}
+              </Typography>
+
+              {/* Icon */}
+              <Box
+                className="icon-box"
+                sx={{
+                  flexShrink: 0,
+                  width: 58,
+                  height: 58,
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+
+                  backgroundColor: "#f8f3f0",
+                  color: ACCENT,
+
+                  transition: "all .3s ease",
+                }}
+              >
+                <Icon sx={{ fontSize: 28 }} />
+              </Box>
+
+              {/* Company name */}
+              <Box sx={{ pr: 2 }}>
+                <Typography
                   sx={{
-                    maxWidth: 170,
-                    maxHeight: 70,
-                    objectFit: "contain",
-                    filter: "grayscale(1)",
-                    opacity: 0.85,
-                    transition: "filter .25s, opacity .25s",
-                    "&:hover": { filter: "none", opacity: 1 },
+                    fontSize: { xs: 15, md: 16 },
+                    fontWeight: 700,
+                    lineHeight: 1.45,
+                    color: "#292929",
                   }}
-                />
-              ) : (
-                <PlaceholderLogo variant={logo.variant} name={logo.name} />
-              )}
+                >
+                  {name}
+                </Typography>
+
+                <Typography
+                  sx={{
+                    mt: 0.7,
+                    fontSize: 12,
+                    color: "#999",
+                    letterSpacing: 0.4,
+                  }}
+                >
+                  Trusted Client
+                </Typography>
+              </Box>
+
+              {/* Arrow */}
+              <ArrowOutwardIcon
+                className="arrow"
+                sx={{
+                  position: "absolute",
+                  right: 16,
+                  bottom: 15,
+                  fontSize: 17,
+                  color: ACCENT,
+                  opacity: 0,
+                  transform: "translate(0, 0)",
+                  transition: "all .3s ease",
+                }}
+              />
             </Box>
           ))}
+        </Box>
+
+        {/* Bottom line */}
+        <Box
+          sx={{
+            mt: { xs: 5, md: 7 },
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 1.5,
+          }}
+        >
+          <Box
+            sx={{
+              width: 35,
+              height: 1,
+              backgroundColor: ACCENT,
+            }}
+          />
+
+          <Typography
+            sx={{
+              fontSize: 12,
+              fontWeight: 600,
+              color: "#999",
+              textTransform: "uppercase",
+              letterSpacing: 2,
+            }}
+          >
+            Professional • Trusted • Experienced
+          </Typography>
+
+          <Box
+            sx={{
+              width: 35,
+              height: 1,
+              backgroundColor: ACCENT,
+            }}
+          />
         </Box>
       </Container>
     </Box>

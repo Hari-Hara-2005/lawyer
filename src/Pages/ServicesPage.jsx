@@ -92,9 +92,15 @@ const ServicesPage = () => {
                     fontWeight: 500,
                   }}
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                  elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
-                  leo.
+                  Involves both Civil and Criminal practises. End to End Service
+                  on Real Estate & Infrastructure, Mediation & Arbitration,
+                  Contracts, Transaction structuring, Mergers & Acquisitions,
+                  Copy rights & Trade mark, matrimonial Disputes, Family
+                  partition arrangements, Apartment Owners Welfare solutions and
+                  dispute resolutions, Documentations, Redeeming of frozen
+                  assets and charges, Cheque Bounce cases, Labour disputes,
+                  Industrial and Projects wise legal compliances, Strategic
+                  advisory etc.,
                 </Typography>
                 <IconButton
                   aria-label="Play video"

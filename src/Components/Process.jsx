@@ -4,16 +4,16 @@ import SectionTitle from "../Components/SectionTitle";
 
 const STEPS = [
   {
-    title: "Find Our Branch On Your City Area",
-    text: "We bring the right people together to challenge established thinking and drive transform in 2020",
+    title: "Understanding",
+    text: "We prioritize your legal queries and problems, understanding that issues often have underlying complexities beyond what is immediately visible. We believe in dedicating ample time to listen to our clients, thoroughly understanding their concerns, and avoiding jumping to conclusions prematurely. Our approach involves delving deep into the matter, considering all relevant legal complexities, and providing comprehensive solutions tailored to your specific needs.",
   },
   {
-    title: "Lets Make Consultation With Us",
-    text: "We bring the right people together to challenge established thinking and drive transform in 2020",
+    title: "Strategy and Planning",
+    text: "Our dedicated team of lawyers and researchers will promptly address your legal issue and develop a comprehensive action plan. Utilizing our expertise and experience, we will formulate a strategic approach to vigorously defend and advocate for your position, always keeping your best interests at the forefront. Our team's combined knowledge and solution-oriented mindset ensure a streamlined and effective process throughout your legal journey.",
   },
   {
-    title: "We Make Solution For Your Case",
-    text: "We bring the right people together to challenge established thinking and drive transform in 2020",
+    title: "Implementation",
+    text: "An action plan without a robust implementation mechanism is prone to failure. When it comes to resolving legal problems, a solid course of action must be accompanied by effective implementation. We firmly believe in executing our plans comprehensively to yield fruitful results. Our team is dedicated to achieving parity between our planning and performance, ensuring that our strategies are effectively carried out.",
   },
 ];
 
@@ -88,8 +88,7 @@ export default function Process({
             mb: { xs: 5, md: 6 },
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-          tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+          Our approach to every matter
         </Typography>
 
         {/* Steps */}

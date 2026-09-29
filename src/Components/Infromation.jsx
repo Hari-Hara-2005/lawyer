@@ -3,6 +3,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { ACCENT, ACCENT_HOVER } from "../Theme";
 import SectionTitle from "../Components/SectionTitle";
+import { Link } from "react-router-dom";
 
 // Replace with your own photo
 const ABOUT_IMAGE =
@@ -12,9 +13,9 @@ const FEATURES = [
   "15 Years Experience",
   "Have Professional Team",
   "Has Trusted More 500+ Clients",
-  "15 Years Experience",
-  "Have Professional Team",
-  "Has Trusted More 500+ Clients",
+  "We thrive in intensity",
+  "We revel in diversity",
+  "We deliver balanced advice",
 ];
 
 export default function Information() {
@@ -74,6 +75,7 @@ export default function Information() {
         <SectionTitle
           eyebrow="Professional Lawyer"
           title="Lets Introduce With Our Professional Lawyer Team"
+          textColor="#241c19"
           sx={{ mb: 2.5 }}
         />
 
@@ -86,8 +88,7 @@ export default function Information() {
             mb: 4,
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-          tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+          To make up the hedge and stand in the gap
         </Typography>
 
         {/* Quote with accent bar */}
@@ -108,13 +109,15 @@ export default function Information() {
               mb: 1.5,
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.Lorem
-            ipsum dolor sit amet consectetur adipiscing elit dolor
+            Our aim is to satisfy our clients through a deep understanding of
+            their needs, their issues, and their industries, and by providing
+            excellent, responsive, and innovative legal service by equally
+            defending the rights and interests of our client to the fullest
+            extent permissible by law.
           </Typography>
-          <Typography sx={{ color: "#241c19", fontWeight: 600, fontSize: 15 }}>
+          {/* <Typography sx={{ color: "#241c19", fontWeight: 600, fontSize: 15 }}>
             Mr. Lawontoni
-          </Typography>
+          </Typography> */}
         </Box>
 
         {/* Feature list, two columns */}
@@ -143,21 +146,23 @@ export default function Information() {
           ))}
         </Box>
 
-        <Button
-          variant="contained"
-          disableElevation
-          sx={{
-            px: 3.75,
-            py: 1.6,
-            textTransform: "none",
-            borderRadius: "5px",
-            fontWeight: 600,
-            fontSize: 16,
-            "&:hover": { bgcolor: ACCENT_HOVER },
-          }}
-        >
-          Our Story
-        </Button>
+        <Link to="/our-story">
+          <Button
+            variant="contained"
+            disableElevation
+            sx={{
+              px: 3.75,
+              py: 1.6,
+              textTransform: "none",
+              borderRadius: "5px",
+              fontWeight: 600,
+              fontSize: 16,
+              "&:hover": { bgcolor: ACCENT_HOVER },
+            }}
+          >
+            Our Story
+          </Button>
+        </Link>
       </Box>
     </Box>
   );

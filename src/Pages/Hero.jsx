@@ -22,6 +22,7 @@ import SuccessStats from "../Components/Successstats";
 import WhyChoose from "../Components/Whychoose";
 import Testimonials from "../Components/Testimonials";
 import Footer from "../Components/Footer";
+import { Link } from "react-router-dom";
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80";
@@ -34,10 +35,9 @@ const FEATURES = [
 
 // Words that get typed automatically after "We Do"
 const TYPED_WORDS = [
-  "Legal Company",
-  "Product",
-  "Registered",
-  "Criminal Lawyer",
+  "Professional PARA LEGAL SERVICES",
+  "PRE- LITIGATION CONSULTANCY",
+  "LEGAL AND LAWYER SERVICES",
   "Much More",
 ];
 
@@ -107,8 +107,12 @@ export default function Hero() {
                   fontWeight: 500,
                 }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-                tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                At Gen Attorneys, we offer a comprehensive range of legal
+                services, from litigation to corporate and commercial matters,
+                and arbitration dispute resolution. Our expertise spans advisory
+                and transactional roles, representing clients across various
+                courts, including the Supreme Court, High Courts, District
+                Courts, and tribunals.
               </Typography>
 
               <Stack spacing={1.6} mb={4.5}>
@@ -127,22 +131,25 @@ export default function Hero() {
                 ))}
               </Stack>
 
-              <Button
-                variant="contained"
-                disableElevation
-                sx={{
-                  px: 3.75,
-                  py: 1.6,
-                  mt:2,
-                  textTransform: "none",
-                  borderRadius:"5px",
-                  fontWeight: 600,
-                  fontSize: 16,
-                  "&:hover": { bgcolor: ACCENT_HOVER },
-                }}
-              >
-                Our Services
-              </Button>
+              <Link to="/services">
+                {" "}
+                <Button
+                  variant="contained"
+                  disableElevation
+                  sx={{
+                    px: 3.75,
+                    py: 1.6,
+                    mt: 2,
+                    textTransform: "none",
+                    borderRadius: "5px",
+                    fontWeight: 600,
+                    fontSize: 16,
+                    "&:hover": { bgcolor: ACCENT_HOVER },
+                  }}
+                >
+                  Our Services
+                </Button>
+              </Link>
 
               <IconButton
                 aria-label="Play video"

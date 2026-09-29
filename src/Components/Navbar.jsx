@@ -38,7 +38,7 @@ const SOCIALS = [FacebookIcon, TwitterIcon, YouTubeIcon, InstagramIcon];
 
 // ---- WhatsApp config ----
 // Use international format, digits only, no "+", no spaces, no leading 0.
-const WHATSAPP_NUMBER = "6212345 6789".replace(/\s+/g, ""); // TODO: replace with real number
+const WHATSAPP_NUMBER = "6212345 6789".replace(/\s+/g, "");
 const WHATSAPP_MESSAGE =
   "Hello, I'm interested in getting a quotation for your services.";
 
@@ -105,14 +105,14 @@ function TopBar() {
         <Stack direction="row" spacing={1} alignItems="center">
           <LocationOnIcon sx={{ color: ACCENT, fontSize: 22 }} />
           <Typography sx={{ fontSize: 13, fontWeight: 500 }}>
-            MADIUN EAST JAVA
+            West Tambaram,Chennai
           </Typography>
         </Stack>
 
         <Stack direction="row" spacing={1} alignItems="center">
           <PhoneIcon sx={{ color: ACCENT, fontSize: 22 }} />
           <Typography sx={{ fontSize: 13, fontWeight: 500 }}>
-            (+62) 123 456 789
+            +91 9884483327
           </Typography>
         </Stack>
       </Stack>

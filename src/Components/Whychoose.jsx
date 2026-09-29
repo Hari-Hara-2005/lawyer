@@ -243,7 +243,6 @@ export default function WhyChoose() {
               <SectionTitle
                 eyebrow="Why Choice Us"
                 title="Why You Choice Our Legal & Lawyer Services"
-                light
                 maxWidth={700}
                 sx={{
                   mb: 2.5,

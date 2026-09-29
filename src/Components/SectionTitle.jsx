@@ -5,7 +5,7 @@ export default function SectionTitle({
   eyebrow,
   title,
   align = "left",
-  textColor = "#241c19",
+  textColor = "#fff",
   maxWidth = 680,
   component = "h2",
   sx,

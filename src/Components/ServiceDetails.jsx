@@ -2,12 +2,9 @@ import { Box, Container, Typography, Button, Grid } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { ACCENT } from "../Theme";
 
-const DESCRIPTION =
-  "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.";
-
 // ---- WhatsApp config ----
 // Use international format, digits only, no "+", no spaces, no leading 0.
-const WHATSAPP_NUMBER = "6212345 6789".replace(/\s+/g, ""); // TODO: replace with real number
+const WHATSAPP_NUMBER = "6212345 6789".replace(/\s+/g, "");
 
 function openWhatsAppQuotation(serviceTitle) {
   const message = `Hello, I'm interested in getting a quotation for your "${serviceTitle}".`;
@@ -19,40 +16,57 @@ function openWhatsAppQuotation(serviceTitle) {
 
 const SERVICE_ROWS = [
   {
-    title: "Family Lawyer Services",
+    title: "Criminal Cases",
     image:
       "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
-    points: ["Land dispute", "Inheritance", "Family problem"],
+    points: [
+      "Filing criminal Complaints",
+      "Initiating Cheque bounce proceedings",
+      "Quash of FIR",
+      "Bails & Anticipatory bails",
+      "POSCO cases",
+      "Domestic violence cases",
+    ],
   },
   {
-    title: "Criminal Lawyer Services",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTBqjwdjklpZ-T7wa-CbpopJ9P8k3NPn8nqWT-Y02S76oZ_jpST7yk3-g&s=10",
-    points: ["Land dispute", "Inheritance", "Family problem"],
-  },
-  {
-    title: "Family Lawyer Services",
-    image:
-      "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
-    points: ["Land dispute", "Inheritance", "Family problem"],
-  },
-  {
-    title: "Criminal Lawyer Services",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTBqjwdjklpZ-T7wa-CbpopJ9P8k3NPn8nqWT-Y02S76oZ_jpST7yk3-g&s=10",
-    points: ["Land dispute", "Inheritance", "Family problem"],
-  },
-  {
-    title: "Family Lawyer Services",
+    title: "Civil Cases",
     image:
       "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
-    points: ["Land dispute", "Inheritance", "Family problem"],
+    points: [
+      "Family Disputes",
+      "Matrimonial Disputes",
+      "Money recovery",
+      "Contractual disputes",
+      "Labour disputes",
+      "Property disputes",
+      "Writs",
+      "Consumer disputes",
+      "NCLT/NCLAT cases",
+      "Arbitration & Reconciliation",
+      "SARFEASI case",
+      "Real Estate cases",
+      "RERA",
+    ],
   },
   {
-    title: "Criminal Lawyer Services",
+    title: "Drafting & Documentations",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTBqjwdjklpZ-T7wa-CbpopJ9P8k3NPn8nqWT-Y02S76oZ_jpST7yk3-g&s=10",
-    points: ["Land dispute", "Inheritance", "Family problem"],
+    points: [
+      "Legal Opinion/Title Due Diligence",
+      "Contract Drafting",
+      "Transaction structuring & documentation",
+      "Transfer of property/Ownership/authority",
+      "Sale / Settlement / Release / Partition",
+      "Gift / Will / Assignment / Power of Attorney",
+      "Sale Certificate",
+      "Agreement drafting",
+      "Sale / Construction / Joint Development",
+      "Rental / Lease / MOU",
+      "Hire Purchase / Loan",
+      "Risk Analysis Report",
+      "Inspection Reports",
+    ],
   },
 ];
 
@@ -102,25 +116,36 @@ const ServiceRow = ({ service, reverse }) => (
       >
         {service.title}
       </Typography>
-      <Typography sx={{ color: "#666", fontSize: 15, lineHeight: 1.7, mb: 3 }}>
-        {DESCRIPTION}
-      </Typography>
 
-      <Box component="ul" sx={{ listStyle: "none", p: 0, m: 0, mb: 4 }}>
+      {/* Points list: 1 column on mobile, 2 columns from tablet up */}
+      <Box
+        component="ul"
+        sx={{
+          listStyle: "none",
+          p: 0,
+          m: 0,
+          mb: 4,
+          columnCount: { xs: 1, sm: 2 },
+          columnGap: 4,
+        }}
+      >
         {service.points.map((point) => (
           <Box
             component="li"
             key={point}
             sx={{
               display: "flex",
-              alignItems: "center",
-              gap: 1.5,
+              alignItems: "flex-start",
+              gap: 1,
               color: "#666",
-              fontSize: 15,
+              fontSize: 14,
               mb: 1.5,
+              breakInside: "avoid",
             }}
           >
-            <CheckCircleIcon sx={{ color: ACCENT, fontSize: 22 }} />
+            <CheckCircleIcon
+              sx={{ color: ACCENT, fontSize: 20, mt: "2px", flexShrink: 0 }}
+            />
             {point}
           </Box>
         ))}

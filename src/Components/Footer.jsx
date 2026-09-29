@@ -28,11 +28,16 @@ const SOCIALS = [
   { icon: YouTubeIcon, label: "YouTube", href: "#" },
   { icon: InstagramIcon, label: "Instagram", href: "#" },
 ];
-const LEGAL_LINKS = ["Privacy Policy", "Disclaimer", "Term Of Service"];
+const LEGAL_LINKS = [
+  { label: "Privacy Policy", path: "/privacy-policy" },
+  { label: "Disclaimer", path: "/disclaimer" },
+  { label: "Terms Of Service", path: "/terms-service" },
+];
 
 function Logo() {
   return (
     <Box
+      component={Link}
       to="/"
       sx={{
         display: "flex",
@@ -178,19 +183,18 @@ export default function Footer() {
             <Typography
               sx={{ fontSize: 15, lineHeight: 1.5, maxWidth: 260, mb: 3.5 }}
             >
-              Lumbung Hidup Street Madiun City East Java
+              No.8, Jesus Cot, Vaigai Nagar, 2nd Street, West Tambaram, Chennai
+              – 600045
             </Typography>
             <Stack spacing={1.75}>
               <Stack direction="row" spacing={1.5} alignItems="center">
                 <PhoneIcon sx={{ color: ACCENT, fontSize: 22 }} />
-                <Typography sx={{ fontSize: 15 }}>
-                  ( +62 ) 123 456 789
-                </Typography>
+                <Typography sx={{ fontSize: 15 }}>+91 9884483327</Typography>
               </Stack>
               <Stack direction="row" spacing={1.5} alignItems="center">
                 <EmailIcon sx={{ color: ACCENT, fontSize: 22 }} />
                 <Typography sx={{ fontSize: 15 }}>
-                  Hello@GenAttorneys.com
+                  genattorneys@yahoo.com
                 </Typography>
               </Stack>
             </Stack>
@@ -215,9 +219,9 @@ export default function Footer() {
           <Stack direction="row" flexWrap="wrap" rowGap={1}>
             {LEGAL_LINKS.map((l, i) => (
               <Box
-                key={l}
-                component="a"
-                href="#"
+                key={l.path}
+                component={Link}
+                to={l.path}
                 sx={{
                   color: "#fff",
                   fontSize: 15,
@@ -228,7 +232,7 @@ export default function Footer() {
                   "&:hover": { color: ACCENT },
                 }}
               >
-                {l}
+                {l.label}
               </Box>
             ))}
           </Stack>
