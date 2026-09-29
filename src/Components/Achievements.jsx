@@ -13,7 +13,6 @@ const STATS = [
 
 const BORDER = "1px solid #e2e2e2";
 
-// Counts from 0 to `end` the first time it scrolls into view
 function CountUp({ end, suffix = "", duration = 2000 }) {
   const ref = useRef(null);
   const started = useRef(false);
