@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import { ACCENT, ACCENT_HOVER } from "../Theme";
 import SectionTitle from "../Components/SectionTitle";
+import { Link } from "react-router-dom";
 
 const STATS = [
   { value: 250, suffix: "+", label: "Company Partner" },
@@ -78,36 +79,26 @@ export default function Achievements() {
             <SectionTitle
               eyebrow="Archivements"
               title="We Have Trust From 15 Years Operation"
+              textColor="#000"
             />
-
-            <Typography
-              sx={{
-                color: "#6b6b6b",
-                fontSize: { xs: 15, md: 16 },
-                lineHeight: 1.45,
-                maxWidth: 660,
-                mb: 4,
-              }}
-            >
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-            </Typography>
-
-            <Button
-              variant="contained"
-              disableElevation
-              sx={{
-                px: 3.75,
-                py: 1.6,
-                textTransform: "none",
-                borderRadius:"5px",
-                fontWeight: 600,
-                fontSize: 16,
-                "&:hover": { bgcolor: ACCENT_HOVER },
-              }}
-            >
-              Lets Started
-            </Button>
+            <Link to="/our-ethics">
+              {" "}
+              <Button
+                variant="contained"
+                disableElevation
+                sx={{
+                  px: 3.75,
+                  py: 1.6,
+                  textTransform: "none",
+                  borderRadius: "5px",
+                  fontWeight: 600,
+                  fontSize: 16,
+                  "&:hover": { bgcolor: ACCENT_HOVER },
+                }}
+              >
+                Lets Started
+              </Button>
+            </Link>
           </Grid>
 
           {/* Right: 2x2 stats with cross dividers */}

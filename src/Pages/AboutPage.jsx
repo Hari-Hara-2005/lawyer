@@ -84,19 +84,7 @@ const AboutPage = () => {
                 >
                   About Us
                 </Typography>
-                <Typography
-                  sx={{
-                    fontSize: { xs: 15, md: 16 },
-                    lineHeight: 1.45,
-                    maxWidth: 660,
-                    mb: 4,
-                    fontWeight: 500,
-                  }}
-                >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                  elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
-                  leo.
-                </Typography>
+
                 <IconButton
                   aria-label="Play video"
                   sx={{

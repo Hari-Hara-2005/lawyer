@@ -11,6 +11,9 @@ import PrivacyPolicy from "./Terms&Service/Privacypolicy";
 import TermsOfService from "./Terms&Service/Termsofservice";
 import Disclaimer from "./Terms&Service/Disclaimer";
 import OurStory from "./Components/Ourstory";
+import OurEthics from "./Components/Ourethics";
+import PropertyApprovals from "./Components/Propertyapprovals";
+import PropertyApprovalsView from "./Pages/PropertyapprovalsPage";
 
 function App() {
   return (
@@ -27,6 +30,9 @@ function App() {
         <Route path="/terms-service" element={<TermsOfService />} />
         <Route path="/disclaimer" element={<Disclaimer />} />
         <Route path="/our-story" element={<OurStory />} />
+        <Route path="/our-ethics" element={<OurEthics />} />
+        <Route path="/genattorneys/admin" element={<PropertyApprovals />} />
+        <Route path="/properties" element={<PropertyApprovalsView />} />
       </Routes>
     </BrowserRouter>
   );

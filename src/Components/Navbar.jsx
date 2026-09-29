@@ -31,6 +31,7 @@ const NAV = [
   { label: "Home", path: "/" },
   { label: "About Page", path: "/about" },
   { label: "Our Services", path: "/services" },
+  { label: "Properties", path: "/properties " },
   { label: "Contact Us", path: "/contact" },
 ];
 

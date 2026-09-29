@@ -2,9 +2,9 @@ import { Box, Typography } from "@mui/material";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import { ACCENT } from "../Theme";
 
-// Replace with your actual office coordinates / embed URL
+// Exact office location
 const MAP_EMBED_URL =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.8!2d111.5225!3d-7.6298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sMadiun%2C+East+Java!5e0!3m2!1sen!2sid!4v0000000000000";
+  "https://www.google.com/maps?q=No.8%2C%20Jesus%20Cot%2C%20Vaigai%20Nagar%2C%202nd%20Street%2C%20West%20Tambaram%2C%20Chennai%20600045&output=embed";
 
 const MapSection = () => {
   return (
@@ -12,7 +12,7 @@ const MapSection = () => {
       <Box
         component="iframe"
         src={MAP_EMBED_URL}
-        title="Office Location Map"
+        title="Gen Attorneys Office Location"
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         sx={{
@@ -24,6 +24,7 @@ const MapSection = () => {
         }}
       />
 
+      {/* Address Card */}
       <Box
         sx={{
           position: { xs: "static", md: "absolute" },
@@ -40,14 +41,34 @@ const MapSection = () => {
         }}
       >
         <LocationOnOutlinedIcon
-          sx={{ color: ACCENT, fontSize: 36, flexShrink: 0 }}
+          sx={{
+            color: ACCENT,
+            fontSize: 36,
+            flexShrink: 0,
+          }}
         />
+
         <Box>
-          <Typography sx={{ fontWeight: 700, fontSize: 16, mb: 0.5 }}>
+          <Typography
+            sx={{
+              fontWeight: 700,
+              fontSize: 16,
+              mb: 0.5,
+            }}
+          >
             Head Office Address
           </Typography>
-          <Typography sx={{ fontSize: 13, color: "rgba(255,255,255,.8)" }}>
-            Lumbung Hidup Street, Madiun City, East Java
+
+          <Typography
+            sx={{
+              fontSize: 13,
+              color: "rgba(255,255,255,.8)",
+              lineHeight: 1.6,
+            }}
+          >
+            No.8, Jesus Cot, Vaigai Nagar, 2nd Street,
+            <br />
+            West Tambaram, Chennai – 600045
           </Typography>
         </Box>
       </Box>

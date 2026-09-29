@@ -93,6 +93,7 @@ export default function FeaturedCompany() {
           <SectionTitle
             eyebrow="Trusted By"
             title="Featured Company"
+            textColor="#000"
             align="center"
           />
 

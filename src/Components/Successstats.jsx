@@ -1,5 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { Box, CircularProgress, Container, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  CircularProgress,
+  Container,
+  Grid,
+  Typography,
+} from "@mui/material";
 import { ACCENT } from "../Theme";
 import SectionTitle from "../Components/SectionTitle";
 
@@ -23,7 +29,8 @@ function useAnimateOnView(ref, duration = 2000) {
     let raf;
 
     const run = () => {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return setT(1);
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+        return setT(1);
       const start = performance.now();
       const tick = (now) => {
         const p = Math.min((now - start) / duration, 1);
@@ -41,7 +48,7 @@ function useAnimateOnView(ref, duration = 2000) {
           observer.disconnect();
         }
       },
-      { threshold: 0.35 }
+      { threshold: 0.35 },
     );
     observer.observe(el);
 
@@ -75,14 +82,28 @@ function CircleStat({ value, label, t }) {
           thickness={3.2}
           sx={{
             color: ACCENT,
-            "& .MuiCircularProgress-circle": { strokeLinecap: "round", transition: "none" },
+            "& .MuiCircularProgress-circle": {
+              strokeLinecap: "round",
+              transition: "none",
+            },
           }}
         />
-        <Box sx={{ position: "absolute", inset: 0, display: "grid", placeItems: "center" }}>
-          <Typography sx={{ color: "#241c19", fontWeight: 600, fontSize: 28 }}>{current}%</Typography>
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            display: "grid",
+            placeItems: "center",
+          }}
+        >
+          <Typography sx={{ color: "#241c19", fontWeight: 600, fontSize: 28 }}>
+            {current}%
+          </Typography>
         </Box>
       </Box>
-      <Typography sx={{ color: "#241c19", fontWeight: 600, fontSize: { xs: 18, md: 24 } }}>
+      <Typography
+        sx={{ color: "#241c19", fontWeight: 600, fontSize: { xs: 18, md: 24 } }}
+      >
         {label}
       </Typography>
     </Box>
@@ -95,16 +116,28 @@ export default function SuccessStats() {
 
   return (
     <Box component="section" sx={{ bgcolor: "#fff", py: { xs: 7, md: 11 } }}>
-      <Container maxWidth={false} sx={{ maxWidth: 1460, px: { xs: 2.5, sm: 4 } }}>
+      <Container
+        maxWidth={false}
+        sx={{ maxWidth: 1460, px: { xs: 2.5, sm: 4 } }}
+      >
         <Grid container spacing={{ xs: 6, md: 8 }} alignItems="center">
           {/* Left: text */}
           <Grid item xs={12} md={6}>
             <SectionTitle
               eyebrow="Succes Stats"
               title="Our Lawyer Projects Succes Stats Percent"
+              textColor="#000"
               sx={{ mb: 2.5 }}
             />
-            <Typography sx={{ color: "#6b6b6b", fontSize: { xs: 15, md: 16 }, lineHeight: 1.45, maxWidth: 660, mb: 4.5 }}>
+            <Typography
+              sx={{
+                color: "#6b6b6b",
+                fontSize: { xs: 15, md: 16 },
+                lineHeight: 1.45,
+                maxWidth: 660,
+                mb: 4.5,
+              }}
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
               tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
             </Typography>
@@ -119,11 +152,17 @@ export default function SuccessStats() {
                 maxWidth: 695,
               }}
             >
-              <Typography sx={{ color: "#5a5a5a", fontSize: { xs: 16, md: 17 }, lineHeight: 1.5 }}>
+              <Typography
+                sx={{
+                  color: "#5a5a5a",
+                  fontSize: { xs: 16, md: 17 },
+                  lineHeight: 1.5,
+                }}
+              >
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque
-                ipsa quae ab illo inventore veritatis et quasi architecto
-                beatae vitae dicta sunt explicabo.
+                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                quae ab illo inventore veritatis et quasi architecto beatae
+                vitae dicta sunt explicabo.
               </Typography>
             </Box>
           </Grid>

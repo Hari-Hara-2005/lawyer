@@ -114,6 +114,7 @@ export default function Testimonials() {
         <SectionTitle
           eyebrow="Testimonial"
           title="What They Says"
+          textColor="#000"
           align="center"
           sx={{ mb: 2 }}
         />
