@@ -72,8 +72,8 @@ const ServicesInfo = () => {
               fontWeight: 500,
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            Our dedicated legal specialists bring deep expertise and strategic
+            perspective to deliver results across commercial, family, and intellectual property matters.
           </Typography>
         </Box>
 

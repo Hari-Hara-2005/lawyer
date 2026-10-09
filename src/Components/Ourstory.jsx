@@ -10,7 +10,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 const CONTACT_EMAIL = "godlygen@yahoo.in";
-const CONTACT_PHONE = "+91 9884483327";
+const CONTACT_PHONE = "044- 43123563";
 
 const FOUNDER_PHOTO = "/assets/image.png";
 

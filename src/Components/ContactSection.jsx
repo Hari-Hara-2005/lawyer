@@ -26,7 +26,7 @@ const CONTACT_INFO = [
   {
     icon: PhoneOutlinedIcon,
     title: "Phone Number",
-    value: "+91 9884483327",
+    value: "044- 43123563",
   },
 ];
 

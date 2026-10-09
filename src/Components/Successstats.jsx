@@ -124,8 +124,8 @@ export default function SuccessStats() {
           {/* Left: text */}
           <Grid item xs={12} md={6}>
             <SectionTitle
-              eyebrow="Succes Stats"
-              title="Our Lawyer Projects Succes Stats Percent"
+              eyebrow="Success Stats"
+              title="Our Proven Legal Track Record & Success Rate"
               textColor="#000"
               sx={{ mb: 2.5 }}
             />
@@ -138,8 +138,9 @@ export default function SuccessStats() {
                 mb: 4.5,
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+              Over decades of courtroom litigation and complex arbitration, our
+              advocates have consistently secured favorable outcomes for
+              individuals and corporations.
             </Typography>
 
             <Box
@@ -159,10 +160,9 @@ export default function SuccessStats() {
                   lineHeight: 1.5,
                 }}
               >
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo.
+                Every case begins with an exhaustive legal review and risk
+                assessment. We combine deep knowledge of statutory law with
+                proactive advocacy to safeguard our clients' vital interests.
               </Typography>
             </Box>
           </Grid>

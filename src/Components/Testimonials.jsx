@@ -10,27 +10,69 @@ import {
 import { ACCENT, theme } from "../Theme";
 import SectionTitle from "../Components/SectionTitle";
 
-// Placeholder avatars - replace `avatar` with your own image URLs
-const TESTIMONIALS = Array.from({ length: 7 }, (_, i) => ({
-  name: "John Doe",
-  role: "CEO",
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
-  avatar: `https://i.pravatar.cc/100?img=${i + 11}`,
-}));
+const TESTIMONIALS = [
+  {
+    name: "Rajesh Mehta",
+    role: "Director, Apex Realty",
+    text: "Their counsel during our multi-acre property acquisition and title verification was immaculate. They identified hidden encumbrances that safeguarded our investment.",
+  },
+  {
+    name: "Sarah Jenkins",
+    role: "Managing Partner, Zenith Tech",
+    text: "Gen Attorneys handled our corporate contracts and IP licensing with exceptional precision. We rely on them for all our regulatory and advisory needs.",
+  },
+  {
+    name: "Arun Kumar",
+    role: "Commercial Property Investor",
+    text: "Navigating property approvals and title clearance was seamless with their experienced team managing the due diligence from start to finish.",
+  },
+  {
+    name: "Elena Rostova",
+    role: "VP Operations, Global Trade Ltd",
+    text: "From transaction structuring to partnership agreements, their attorneys are proactive, accessible, and remarkably astute negotiators.",
+  },
+  {
+    name: "Vikram Sethi",
+    role: "Founder, Nexus Logistics",
+    text: "Their strategic arbitration in a complex contract dispute saved our firm from years of prolonged litigation. Truly top-tier advocates.",
+  },
+  {
+    name: "Priya Nair",
+    role: "Private Client",
+    text: "They guided our family through an intricate property settlement with utmost integrity, professional sensitivity, and legal clarity.",
+  },
+  {
+    name: "David Vance",
+    role: "CFO, Horizon Infrastructure",
+    text: "Their deep knowledge of real estate law, lease licenses, and corporate compliance gives our executive board complete confidence.",
+  },
+];
 
 const AUTOPLAY_MS = 4000;
 
-function TestimonialCard({ name, role, text, avatar }) {
+function getInitials(name) {
+  if (!name) return "";
+  const parts = name.trim().split(/\s+/);
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
+function TestimonialCard({ name, role, text }) {
+  const initials = getInitials(name);
+
   return (
     <Box
       sx={{
         height: "100%",
         border: "1px solid #e2e2e2",
-        borderRadius: "3px",
+        borderRadius: "4px",
         bgcolor: "#fff",
         px: { xs: 3, md: 5 },
         py: { xs: 4, md: 5.5 },
         textAlign: "center",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
       }}
     >
       <Typography
@@ -38,42 +80,67 @@ function TestimonialCard({ name, role, text, avatar }) {
           color: "#6b6b6b",
           fontStyle: "italic",
           fontWeight: 500,
-          fontSize: { xs: 16, md: 18 },
-          lineHeight: 1.45,
+          fontSize: { xs: 16, md: 17 },
+          lineHeight: 1.5,
           mb: 3.5,
         }}
       >
-        {text}
+        "{text}"
       </Typography>
-      <Stack
-        direction="row"
-        spacing={2.5}
-        justifyContent="center"
-        alignItems="center"
+
+      {/* General Name Tag */}
+      <Box
+        sx={{
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 2,
+          mx: "auto",
+          px: 2.5,
+          py: 1.2,
+          borderRadius: "32px",
+          bgcolor: "#fbf9f6",
+          border: "1px solid #ebd8c8",
+          boxShadow: "0 2px 6px rgba(0,0,0,0.03)",
+        }}
       >
         <Avatar
-          src={avatar}
-          alt={name}
-          sx={{ width: 50, height: 50, bgcolor: "#241c19" }}
+          sx={{
+            width: 44,
+            height: 44,
+            bgcolor: "#241c19",
+            color: ACCENT,
+            fontWeight: 700,
+            fontSize: 15,
+            letterSpacing: 0.5,
+            border: `1.5px solid ${ACCENT}`,
+          }}
         >
-          {name[0]}
+          {initials}
         </Avatar>
         <Box sx={{ textAlign: "left" }}>
           <Typography
             sx={{
               color: "#241c19",
-              fontWeight: 600,
+              fontWeight: 700,
               fontSize: 15,
-              lineHeight: 1.4,
+              lineHeight: 1.3,
             }}
           >
             {name}
           </Typography>
-          <Typography sx={{ color: ACCENT, fontSize: 15, lineHeight: 1.4 }}>
+          <Typography
+            sx={{
+              color: ACCENT,
+              fontWeight: 500,
+              fontSize: 13,
+              lineHeight: 1.3,
+            }}
+          >
             {role}
           </Typography>
         </Box>
-      </Stack>
+      </Box>
     </Box>
   );
 }
@@ -112,8 +179,8 @@ export default function Testimonials() {
         sx={{ maxWidth: 1460, px: { xs: 2.5, sm: 4 } }}
       >
         <SectionTitle
-          eyebrow="Testimonial"
-          title="What They Says"
+          eyebrow="Client Testimonials"
+          title="What Our Clients Say"
           textColor="#000"
           align="center"
           sx={{ mb: 2 }}
@@ -129,8 +196,8 @@ export default function Testimonials() {
             mb: { xs: 5, md: 6 },
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-          tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+          Read firsthand how our strategic legal counsel and meticulous due
+          diligence have protected our clients' interests and delivered results.
         </Typography>
 
         {/* Slider */}

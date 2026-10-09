@@ -5,9 +5,7 @@ import { ACCENT, ACCENT_HOVER } from "../Theme";
 import SectionTitle from "../Components/SectionTitle";
 import { Link } from "react-router-dom";
 
-// Replace with your own photo
-const ABOUT_IMAGE =
-  "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1400&q=80";
+const ABOUT_IMAGE = "/assets/bridge-advocacy.jpg";
 
 const FEATURES = [
   "15 Years Experience",

@@ -18,16 +18,17 @@ const TEXT =
   "We bring the right people together to challenge established thinking and drive transform in 2020";
 
 const SERVICES = [
-  { title: "Criminal Lawyer", icon: GroupsOutlinedIcon, filled: false },
-  { title: "Family Case", icon: HandshakeOutlinedIcon, filled: true },
+  { title: "Property acquisition support", icon: GroupsOutlinedIcon, filled: false },
+  { title: " Family disputes resolution", icon: HandshakeOutlinedIcon, filled: true },
   {
-    title: "Money Case",
+    title: "Community living disputes resolution",
     icon: AccountBalanceWalletOutlinedIcon,
     filled: false,
   },
-  { title: "Copyright", icon: VerifiedUserOutlinedIcon, filled: true },
-  { title: "Company Law", icon: WorkOutlineOutlinedIcon, filled: false },
-  { title: "Legal Products", icon: FindInPageOutlinedIcon, filled: true },
+  { title: "Corporate advising", icon: VerifiedUserOutlinedIcon, filled: true },
+  { title: "Copy rights and trade  mark", icon: WorkOutlineOutlinedIcon, filled: false },
+  { title: "Contract advising", icon: FindInPageOutlinedIcon, filled: true },
+   { title: "Transaction structuring", icon: FindInPageOutlinedIcon, filled: true },
 ];
 
 function ServiceCard({ title, icon: Icon, filled }) {
@@ -139,8 +140,8 @@ export default function Services() {
             mb: { xs: 5, md: 7 },
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-          tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+          From property acquisition and contract structuring to dispute resolution
+          and corporate governance, we deliver strategic legal solutions tailored to your needs.
         </Typography>
 
         <Box

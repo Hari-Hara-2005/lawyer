@@ -189,7 +189,7 @@ export default function Footer() {
             <Stack spacing={1.75}>
               <Stack direction="row" spacing={1.5} alignItems="center">
                 <PhoneIcon sx={{ color: ACCENT, fontSize: 22 }} />
-                <Typography sx={{ fontSize: 15 }}>+91 9884483327</Typography>
+                <Typography sx={{ fontSize: 15 }}>044- 43123563</Typography>
               </Stack>
               <Stack direction="row" spacing={1.5} alignItems="center">
                 <EmailIcon sx={{ color: ACCENT, fontSize: 22 }} />

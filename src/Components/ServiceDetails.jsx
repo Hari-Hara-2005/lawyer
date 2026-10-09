@@ -4,7 +4,7 @@ import { ACCENT } from "../Theme";
 
 // ---- WhatsApp config ----
 // Use international format, digits only, no "+", no spaces, no leading 0.
-const WHATSAPP_NUMBER = "6212345 6789".replace(/\s+/g, "");
+const WHATSAPP_NUMBER = "+91 9884483327".replace(/\s+/g, "");
 
 function openWhatsAppQuotation(serviceTitle) {
   const message = `Hello, I'm interested in getting a quotation for your "${serviceTitle}".`;
@@ -50,8 +50,7 @@ const SERVICE_ROWS = [
   },
   {
     title: "Drafting & Documentations",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTBqjwdjklpZ-T7wa-CbpopJ9P8k3NPn8nqWT-Y02S76oZ_jpST7yk3-g&s=10",
+    image: "/assets/bridge-advocacy.jpg",
     points: [
       "Legal Opinion/Title Due Diligence",
       "Contract Drafting",

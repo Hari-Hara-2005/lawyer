@@ -37,9 +37,7 @@ const NAV = [
 
 const SOCIALS = [FacebookIcon, TwitterIcon, YouTubeIcon, InstagramIcon];
 
-// ---- WhatsApp config ----
-// Use international format, digits only, no "+", no spaces, no leading 0.
-const WHATSAPP_NUMBER = "6212345 6789".replace(/\s+/g, "");
+const WHATSAPP_NUMBER = "+91 9884483327".replace(/\s+/g, "");
 const WHATSAPP_MESSAGE =
   "Hello, I'm interested in getting a quotation for your services.";
 
@@ -113,7 +111,7 @@ function TopBar() {
         <Stack direction="row" spacing={1} alignItems="center">
           <PhoneIcon sx={{ color: ACCENT, fontSize: 22 }} />
           <Typography sx={{ fontSize: 13, fontWeight: 500 }}>
-            +91 9884483327
+            044- 43123563
           </Typography>
         </Stack>
       </Stack>

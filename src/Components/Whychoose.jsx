@@ -8,32 +8,33 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { ACCENT } from "../Theme";
 import SectionTitle from "../Components/SectionTitle";
 
-// Background image
-const BG_IMAGE =
-  "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1920&q=80";
-
-const TEXT =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.";
+const BG_IMAGE = "/assets/teamwork-support.jpg";
 
 const REASONS = [
   {
-    title: "15 Years Experience",
+    title: "15+ Years Experience",
+    description:
+      "Proven history of delivering successful outcomes across complex litigation and corporate legal matters.",
     icon: CalendarMonthOutlinedIcon,
   },
   {
-    title: "Professional Lawyer",
+    title: "Expert Advocates",
+    description:
+      "Qualified attorneys and advisors bringing specialized knowledge in property, contract, and civil law.",
     icon: PersonOutlineIcon,
   },
   {
-    title: "Have Many Team Work",
+    title: "Dedicated Teamwork",
+    description:
+      "Our multidisciplinary legal team works collaboratively to evaluate every angle and protect your interests.",
     icon: GroupsOutlinedIcon,
   },
 ];
 
 const CHECKS = [
-  "15 Years Experience",
-  "Have Professional Team",
-  "Has Trusted More 500+ Clients",
+  "15+ Years of Legal Excellence",
+  "Specialized Multidisciplinary Team",
+  "Trusted by 500+ Clients & Businesses",
 ];
 
 export default function WhyChoose() {
@@ -128,7 +129,7 @@ export default function WhyChoose() {
                   md: 4.5,
                 }}
               >
-                {REASONS.map(({ title, icon: Icon }) => (
+                {REASONS.map(({ title, description, icon: Icon }) => (
                   <Stack
                     key={title}
                     direction="row"
@@ -210,7 +211,7 @@ export default function WhyChoose() {
                           color: "rgba(255,255,255,0.78)",
                         }}
                       >
-                        {TEXT}
+                        {description}
                       </Typography>
                     </Box>
                   </Stack>
@@ -241,8 +242,8 @@ export default function WhyChoose() {
               }}
             >
               <SectionTitle
-                eyebrow="Why Choice Us"
-                title="Why You Choice Our Legal & Lawyer Services"
+                eyebrow="Why Choose Us"
+                title="Why Choose Our Legal & Advisory Services"
                 
                 maxWidth={700}
                 sx={{
@@ -263,10 +264,10 @@ export default function WhyChoose() {
                   color: "rgba(255,255,255,0.82)",
                 }}
               >
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo.
+                We combine extensive legal acumen, meticulous due diligence, and
+                an unwavering commitment to client success. From complex real
+                estate acquisitions to corporate advisory, our advocates provide
+                clear, dependable counsel at every step.
               </Typography>
 
               {/* CHECK LIST */}
