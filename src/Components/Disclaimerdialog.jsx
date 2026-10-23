@@ -17,7 +17,7 @@ const POINTS = [
   "The user is voluntarily using our website to gain information about us for their information and use. They also acknowledge that there has been no attempt by us to advertise or solicit work.",
   "Any information obtained or downloaded from our website does not lead to the creation of an attorney-client relationship between the Firm and the user.",
   "The content on this website is for informational purposes only and cannot be construed to be a form of legal opinion or legal advice.",
-  "Gen Attorneys Associates will not be held liable for any consequences from actions taken based on the materials or information provided on this website.",
+  "Gen Attorneys will not be held liable for any consequences from actions taken based on the materials or information provided on this website.",
 ];
 
 // Reads the saved choice. Wrapped in try/catch in case storage is blocked.
@@ -61,7 +61,7 @@ export default function DisclaimerDialog() {
         <Typography gutterBottom>
           The Bar Council of India prohibits advocates from engaging in any form
           of advertisement or solicitation. By accessing the Gen Attorneys
-          Associates website (our website), the user acknowledges that:
+          website (our website), the user acknowledges that:
         </Typography>
 
         <List sx={{ listStyleType: "disc", pl: 3 }}>
