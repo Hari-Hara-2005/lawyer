@@ -125,6 +125,8 @@ export default function FeaturedCompany() {
           {COMPANIES.map(({ name, icon: Icon }, index) => (
             <Box
               key={name}
+              data-aos="fade-up"
+              data-aos-delay={(index % 3) * 100 + 80}
               sx={{
                 position: "relative",
                 minHeight: { xs: 125, md: 145 },

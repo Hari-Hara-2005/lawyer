@@ -14,6 +14,9 @@ const QUICK_LINKS = [
   { label: "Home", path: "/" },
   { label: "About Us", path: "/about" },
   { label: "Our Services", path: "/services" },
+  { label: "Corporate Monthly Plans", path: "/corporate-plans" },
+  { label: "Online Enquiry", path: "/enquiry" },
+  { label: "Properties", path: "/properties" },
   { label: "Contact Us", path: "/contact" },
 ];
 const SERVICES = [
@@ -115,6 +118,7 @@ export default function Footer() {
       >
         {/* Main columns */}
         <Box
+          data-aos="fade-up"
           sx={{
             display: "grid",
             gridTemplateColumns: {

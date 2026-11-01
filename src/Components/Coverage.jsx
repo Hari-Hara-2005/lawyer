@@ -11,7 +11,7 @@ import DomainIcon from "@mui/icons-material/Domain";
 import { ACCENT, ACCENT_HOVER } from "../Theme";
 import SectionTitle from "../Components/SectionTitle";
 
-const BANNER_IMAGE = "/assets/teamwork-support.jpg";
+const BANNER_IMAGE = "/assets/digital-justice.jpg";
 
 const MAP_SRC = "";
 
@@ -239,7 +239,7 @@ export default function Coverage() {
           }}
           alignItems="flex-start"
         >
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} data-aos="fade-right">
             <SectionTitle
               eyebrow="Many Coverage"
               title="We Are in Various Areas Coverage"

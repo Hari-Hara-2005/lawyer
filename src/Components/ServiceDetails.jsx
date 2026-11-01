@@ -17,8 +17,7 @@ function openWhatsAppQuotation(serviceTitle) {
 const SERVICE_ROWS = [
   {
     title: "Criminal Cases",
-    image:
-      "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
+    image: "/assets/court-gavel.jpg",
     points: [
       "Filing criminal Complaints",
       "Initiating Cheque bounce proceedings",
@@ -50,7 +49,7 @@ const SERVICE_ROWS = [
   },
   {
     title: "Drafting & Documentations",
-    image: "/assets/bridge-advocacy.jpg",
+    image: "/assets/legaltech-corporate.jpg",
     points: [
       "Legal Opinion/Title Due Diligence",
       "Contract Drafting",

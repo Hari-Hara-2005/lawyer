@@ -142,7 +142,7 @@ const RENTAL_FIELDS = [
   {
     key: "availabilityStatus",
     dbKey: "availability_status",
-    label: "Status of Availability",
+    label: "Contact",
     type: "select",
     options: ["Available", "Not Available", "Under Negotiation"],
   },

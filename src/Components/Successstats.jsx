@@ -122,7 +122,7 @@ export default function SuccessStats() {
       >
         <Grid container spacing={{ xs: 6, md: 8 }} alignItems="center">
           {/* Left: text */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} data-aos="fade-right">
             <SectionTitle
               eyebrow="Success Stats"
               title="Our Proven Legal Track Record & Success Rate"
@@ -168,7 +168,7 @@ export default function SuccessStats() {
           </Grid>
 
           {/* Right: 2x2 circular stats */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} data-aos="fade-left">
             <Box
               ref={statsRef}
               sx={{

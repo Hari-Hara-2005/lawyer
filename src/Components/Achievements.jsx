@@ -74,9 +74,9 @@ export default function Achievements() {
       >
         <Grid container spacing={{ xs: 6, md: 8 }} alignItems="center">
           {/* Left: text */}
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, md: 6 }} data-aos="fade-right">
             <SectionTitle
-              eyebrow="Archivements"
+              eyebrow="Achievements"
               title="We Have Trust From 15 Years Operation"
               textColor="#000"
             />
@@ -101,7 +101,7 @@ export default function Achievements() {
           </Grid>
 
           {/* Right: 2x2 stats with cross dividers */}
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, md: 6 }} data-aos="fade-left">
             <Box
               sx={{
                 display: "grid",
@@ -114,6 +114,8 @@ export default function Achievements() {
               {STATS.map((s, i) => (
                 <Box
                   key={i}
+                  data-aos="zoom-in"
+                  data-aos-delay={i * 100 + 100}
                   sx={{
                     textAlign: "center",
                     py: { xs: 3.5, md: 4 },

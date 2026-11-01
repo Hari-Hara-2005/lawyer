@@ -100,6 +100,7 @@ export default function WhyChoose() {
               xs: 12,
               md: 6,
             }}
+            data-aos="fade-right"
           >
             <Box
               sx={{
@@ -229,6 +230,7 @@ export default function WhyChoose() {
               xs: 12,
               md: 6,
             }}
+            data-aos="fade-left"
           >
             <Box
               sx={{

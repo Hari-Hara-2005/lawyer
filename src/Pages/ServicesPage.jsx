@@ -1,12 +1,10 @@
 import {
   Box,
   Container,
-  IconButton,
   Typography,
   CssBaseline,
   ThemeProvider,
 } from "@mui/material";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { ACCENT, theme } from "../Theme";
 import Navbar from "../Components/Navbar";
 import TypingText from "../Components/TypingText";
@@ -15,8 +13,7 @@ import Process from "../Components/Process";
 import ServiceDetails from "../Components/ServiceDetails";
 import Footer from "../Components/Footer";
 
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80";
+const HERO_IMAGE = "/assets/digital-justice.jpg";
 
 // Words that get typed automatically after "We Do"
 const TYPED_WORDS = [
@@ -57,6 +54,7 @@ const ServicesPage = () => {
                   pt: { xs: 8, md: 15 },
                   pb: { xs: 8, md: 14 },
                 }}
+                data-aos="fade-up"
               >
                 <Typography
                   sx={{
@@ -102,41 +100,20 @@ const ServicesPage = () => {
                   Industrial and Projects wise legal compliances, Strategic
                   advisory etc.,
                 </Typography>
-                <IconButton
-                  aria-label="Play video"
-                  sx={{
-                    position: { xs: "static", md: "absolute" },
-                    mt: { xs: 5, md: 0 },
-                    display: "flex",
-                    right: { md: "14%", lg: "15%" },
-                    top: { md: "52%" },
-                    width: { xs: 76, md: 108 },
-                    height: { xs: 76, md: 108 },
-                    border: "4px solid #fff",
-                    color: "#fff",
-                    transition: "transform .2s, background .2s",
-                    "&:hover": {
-                      transform: "scale(1.06)",
-                      bgcolor: "rgba(255,255,255,.12)",
-                    },
-                  }}
-                >
-                  <PlayArrowIcon sx={{ fontSize: { xs: 48, md: 68 } }} />
-                </IconButton>
               </Box>
             </Container>
           </Box>
         </section>
-        <section>
+        <section data-aos="fade-up">
           <ServicesInfo />
         </section>
-        <section>
+        <section data-aos="fade-up">
           <Process backgroundColor="#fff" textColor="#000" />
         </section>
-        <section>
+        <section data-aos="fade-up">
           <ServiceDetails />
         </section>
-        <section>
+        <section data-aos="fade-up">
           <Footer />
         </section>
       </ThemeProvider>

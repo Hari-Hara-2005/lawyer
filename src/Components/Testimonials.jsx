@@ -202,6 +202,8 @@ export default function Testimonials() {
 
         {/* Slider */}
         <Box
+          data-aos="fade-up"
+          data-aos-delay="100"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
           sx={{ overflow: "hidden" }}

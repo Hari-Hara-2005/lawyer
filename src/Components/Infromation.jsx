@@ -1,11 +1,10 @@
-import { Box, Button, IconButton, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { ACCENT, ACCENT_HOVER } from "../Theme";
 import SectionTitle from "../Components/SectionTitle";
 import { Link } from "react-router-dom";
 
-const ABOUT_IMAGE = "/assets/bridge-advocacy.jpg";
+const ABOUT_IMAGE = "/assets/lawyer-team.jpg";
 
 const FEATURES = [
   "15 Years Experience",
@@ -28,39 +27,23 @@ export default function Information() {
         py: { xs: 0, md: 8 },
       }}
     >
-      {/* Left: image bleeding to the screen edge */}
+      {/* Left: high-resolution lawyer team image bleeding to the screen edge */}
       <Box
+        data-aos="fade-right"
         sx={{
           position: "relative",
           flex: { md: "0 0 48%" },
-          height: { xs: 300, sm: 400, md: 552 },
-          backgroundImage: `linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)), url(${ABOUT_IMAGE})`,
+          height: { xs: 320, sm: 420, md: 552 },
+          backgroundImage: `url(${ABOUT_IMAGE})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundColor: "#3a2a20",
+          backgroundColor: "#f5f5f5",
         }}
-      >
-        <IconButton
-          aria-label="Play video"
-          sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: { xs: 76, md: 108 },
-            height: { xs: 76, md: 108 },
-            border: "4px solid #fff",
-            color: "#fff",
-            transition: "background .2s",
-            "&:hover": { bgcolor: "rgba(255,255,255,.15)" },
-          }}
-        >
-          <PlayArrowIcon sx={{ fontSize: { xs: 48, md: 68 } }} />
-        </IconButton>
-      </Box>
+      />
 
       {/* Right: content */}
       <Box
+        data-aos="fade-left"
         sx={{
           flex: 1,
           minWidth: 0,
@@ -113,9 +96,6 @@ export default function Information() {
             defending the rights and interests of our client to the fullest
             extent permissible by law.
           </Typography>
-          {/* <Typography sx={{ color: "#241c19", fontWeight: 600, fontSize: 15 }}>
-            Mr. Lawontoni
-          </Typography> */}
         </Box>
 
         {/* Feature list, two columns */}

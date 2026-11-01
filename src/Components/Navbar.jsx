@@ -29,9 +29,11 @@ import { ACCENT, ACCENT_HOVER, LINE, theme } from "../Theme.js";
 
 const NAV = [
   { label: "Home", path: "/" },
-  { label: "About Page", path: "/about" },
+  { label: "About", path: "/about" },
   { label: "Our Services", path: "/services" },
-  { label: "Properties", path: "/properties " },
+  { label: "Corporate Monthly Plans", path: "/corporate-plans" },
+  { label: "Properties", path: "/properties" },
+  { label: "Enquiry", path: "/enquiry" },
   { label: "Contact Us", path: "/contact" },
 ];
 
@@ -152,11 +154,12 @@ function DesktopLinks() {
 
   return (
     <Stack
+      component="nav"
       direction="row"
       alignItems="center"
       justifyContent="center"
-      spacing={{ md: 3, lg: 5 }}
-      sx={{ flex: 1 }}
+      spacing={{ md: 2, lg: 3 }}
+      sx={{ flex: 1, flexWrap: "nowrap" }}
     >
       {NAV.map((item) => {
         const active = isActivePath(pathname, item.path);
@@ -173,7 +176,8 @@ function DesktopLinks() {
               color: active ? ACCENT : "#fff",
               textTransform: "none",
               fontWeight: 500,
-              fontSize: 16,
+              fontSize: { md: 14, lg: 15.5 },
+              whiteSpace: "nowrap",
               p: 0,
               minWidth: 0,
               "&:hover": {
@@ -216,8 +220,8 @@ function MobileDrawer({ open, onClose }) {
       onClose={onClose}
       PaperProps={{
         sx: {
-          width: { xs: "82%", sm: 340 },
-          maxWidth: 360,
+          width: { xs: "84%", sm: 360 },
+          maxWidth: 380,
           bgcolor: "#fff",
           color: "#1a1412",
           display: "flex",
@@ -405,25 +409,26 @@ export default function Navbar() {
               direction="row"
               alignItems="center"
               justifyContent="space-between"
-              sx={{ flex: 1, ml: { md: 4, lg: 6 } }}
+              sx={{ flex: 1, ml: { md: 2.5, lg: 4 } }}
             >
               {/* CENTER NAVIGATION */}
               <DesktopLinks />
 
               {/* RIGHT BUTTON */}
-              <Box sx={{ ml: { md: 3, lg: 5 }, flexShrink: 0 }}>
+              <Box sx={{ ml: { md: 2, lg: 3 }, flexShrink: 0 }}>
                 <Button
                   variant="contained"
                   disableElevation
                   onClick={openWhatsAppQuotation}
                   sx={{
-                    px: 4,
-                    py: 1.3,
+                    px: { md: 2.5, lg: 3.5 },
+                    py: 1.2,
                     mt: 2.5,
                     textTransform: "none",
                     fontWeight: 600,
-                    fontSize: 15.5,
+                    fontSize: { md: 13.5, lg: 15 },
                     borderRadius: "5px",
+                    whiteSpace: "nowrap",
                     "&:hover": { bgcolor: ACCENT_HOVER },
                   }}
                 >

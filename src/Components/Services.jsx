@@ -17,25 +17,29 @@ const DARK = "#241c19";
 const TEXT =
   "We bring the right people together to challenge established thinking and drive transform in 2020";
 
+const WHATSAPP_NUMBER = "919884483327";
+
 const SERVICES = [
   { title: "Property acquisition support", icon: GroupsOutlinedIcon, filled: false },
-  { title: " Family disputes resolution", icon: HandshakeOutlinedIcon, filled: true },
+  { title: "Family disputes resolution", icon: HandshakeOutlinedIcon, filled: true },
   {
     title: "Community living disputes resolution",
     icon: AccountBalanceWalletOutlinedIcon,
     filled: false,
   },
   { title: "Corporate advising", icon: VerifiedUserOutlinedIcon, filled: true },
-  { title: "Copy rights and trade  mark", icon: WorkOutlineOutlinedIcon, filled: false },
+  { title: "Copy rights and trade mark", icon: WorkOutlineOutlinedIcon, filled: false },
   { title: "Contract advising", icon: FindInPageOutlinedIcon, filled: true },
-   { title: "Transaction structuring", icon: FindInPageOutlinedIcon, filled: true },
+  { title: "Transaction structuring", icon: FindInPageOutlinedIcon, filled: true },
 ];
 
-function ServiceCard({ title, icon: Icon, filled }) {
+function ServiceCard({ title, icon: Icon, filled, isLast, index = 0 }) {
   // Filled cards: orange background, dark icon + link. Outlined: orange icon + link.
   const fg = filled ? DARK : ACCENT;
   return (
     <Box
+      data-aos="fade-up"
+      data-aos-delay={(index % 3) * 100 + 80}
       sx={{
         minHeight: 300,
         px: { xs: 3, md: 4.4 },
@@ -55,6 +59,15 @@ function ServiceCard({ title, icon: Icon, filled }) {
           "& .svc-icon, & .svc-link": { color: DARK },
           "& .svc-link": { borderBottomColor: DARK },
         },
+        ...(isLast && {
+          gridColumn: {
+            sm: "1 / -1",
+            md: "2 / 3",
+          },
+          maxWidth: { sm: 500, md: "none" },
+          mx: { sm: "auto", md: 0 },
+          width: { sm: "100%", md: "auto" },
+        }),
       }}
     >
       <Icon
@@ -79,7 +92,11 @@ function ServiceCard({ title, icon: Icon, filled }) {
       </Typography>
       <Box
         component="a"
-        href="#"
+        href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+          `Hello, I'm interested in getting a quotation for "${title.trim()}".`
+        )}`}
+        target="_blank"
+        rel="noopener noreferrer"
         className="svc-link"
         sx={{
           display: "inline-block",
@@ -155,8 +172,13 @@ export default function Services() {
             gap: { xs: 2.5, md: 3.75 },
           }}
         >
-          {SERVICES.map((s) => (
-            <ServiceCard key={s.title} {...s} />
+          {SERVICES.map((s, i) => (
+            <ServiceCard
+              key={s.title}
+              {...s}
+              isLast={i === SERVICES.length - 1}
+              index={i}
+            />
           ))}
         </Box>
       </Container>
