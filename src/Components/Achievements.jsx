@@ -5,10 +5,10 @@ import SectionTitle from "../Components/SectionTitle";
 import { Link } from "react-router-dom";
 
 const STATS = [
-  { value: 250, suffix: "+", label: "Company Partner" },
-  { value: 100, suffix: "+", label: "Products Registered" },
-  { value: 250, suffix: "+", label: "Company Partner" },
-  { value: 100, suffix: "+", label: "Products Registered" },
+  { value: 500, suffix: "+", label: "Trusted Clients" },
+  { value: 15, suffix: "+", label: "Years Experience" },
+  { value: 1200, suffix: "+", label: "Matters Handled" },
+  { value: 98, suffix: "%", label: "Client Satisfaction" },
 ];
 
 const BORDER = "1px solid #e2e2e2";

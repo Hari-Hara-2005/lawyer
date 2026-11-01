@@ -22,8 +22,7 @@ import Testimonials from "../Components/Testimonials";
 import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
 
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=2000&q=85";
+const HERO_IMAGE = "/assets/hero-justice.png";
 
 const FEATURES = [
   "15 Years Experience",
@@ -50,31 +49,37 @@ export default function Hero() {
             position: "relative",
             color: "#fff",
             overflow: "hidden",
-            minHeight: { xs: "auto", md: 840 },
-            backgroundImage: `linear-gradient(rgba(20,14,12,.72), rgba(20,14,12,.72)), url(${HERO_IMAGE})`,
+            minHeight: { xs: 680, sm: 760, md: 750 },
+            backgroundImage: `
+              radial-gradient(ellipse at 85% 45%, rgba(185, 89, 47, 0.18) 0%, transparent 60%),
+              linear-gradient(90deg, rgba(14, 10, 8, 0.94) 0%, rgba(18, 13, 10, 0.82) 42%, rgba(18, 13, 10, 0.38) 72%, rgba(18, 13, 10, 0.22) 100%),
+              linear-gradient(180deg, rgba(14, 10, 8, 0.7) 0%, transparent 20%, transparent 75%, rgba(14, 10, 8, 0.92) 100%),
+              url(${HERO_IMAGE})
+            `,
             backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundColor: "#2a201c",
+            backgroundPosition: { xs: "center", md: "center right", lg: "right center" },
+            backgroundRepeat: "no-repeat",
+            backgroundColor: "#16110f",
           }}
         >
           <Navbar />
 
           <Container
             maxWidth={false}
-            sx={{ maxWidth: 1460, px: { xs: 2.5, sm: 4 } }}
+            sx={{ maxWidth: 1460, px: { xs: 2.5, sm: 4, md: 5 } }}
           >
             <Box
               sx={{
                 position: "relative",
-                pt: { xs: 8, md: 15 },
-                pb: { xs: 8, md: 14 },
+                pt: { xs: 8, sm: 10, md: 14, lg: 16 },
+                pb: { xs: 8, sm: 10, md: 14, lg: 16 },
               }}
               data-aos="fade-up"
             >
               <Typography
                 sx={{
                   fontSize: { xs: 13, md: 15 },
-                  fontWeight: 500,
+                  fontWeight: 600,
                   letterSpacing: 3,
                   textTransform: "uppercase",
                   mb: 3,
@@ -88,22 +93,24 @@ export default function Hero() {
                 component="h1"
                 sx={{
                   fontWeight: 700,
-                  lineHeight: 1.2,
-                  fontSize: { xs: 38, sm: 52, md: 64 },
-                  maxWidth: 680,
-                  mb: 4,
+                  lineHeight: { xs: 1.2, sm: 1.15 },
+                  fontSize: { xs: 36, sm: 48, md: 58, lg: 64 },
+                  maxWidth: { xs: "100%", md: 680, lg: 720 },
+                  mb: 3.5,
+                  letterSpacing: "-0.02em",
                 }}
               >
-                Professional Legal & Lawyer Services
+                Professional Legal &amp; Lawyer Services
               </Typography>
 
               <Typography
                 sx={{
-                  fontSize: { xs: 15, md: 16 },
-                  lineHeight: 1.45,
-                  maxWidth: 660,
+                  fontSize: { xs: 15, sm: 16, md: 16.5 },
+                  lineHeight: 1.7,
+                  maxWidth: { xs: "100%", md: 620, lg: 660 },
                   mb: 4,
-                  fontWeight: 500,
+                  fontWeight: 400,
+                  color: "rgba(255, 255, 255, 0.88)",
                 }}
               >
                 At Gen Attorneys, we offer a comprehensive range of legal
@@ -114,7 +121,7 @@ export default function Hero() {
                 Courts, and tribunals.
               </Typography>
 
-              <Stack spacing={1.6} mb={4.5}>
+              <Stack spacing={1.8} mb={4.5}>
                 {FEATURES.map((f) => (
                   <Stack
                     key={f}
@@ -123,7 +130,13 @@ export default function Hero() {
                     alignItems="center"
                   >
                     <CheckCircleIcon sx={{ color: ACCENT, fontSize: 22 }} />
-                    <Typography sx={{ fontSize: 15, fontWeight: 500 }}>
+                    <Typography
+                      sx={{
+                        fontSize: { xs: 14.5, sm: 15.5 },
+                        fontWeight: 500,
+                        color: "rgba(255, 255, 255, 0.95)",
+                      }}
+                    >
                       {f}
                     </Typography>
                   </Stack>
@@ -131,19 +144,25 @@ export default function Hero() {
               </Stack>
 
               <Box data-aos="fade-up" data-aos-delay="200">
-                <Link to="/services">
+                <Link to="/services" style={{ textDecoration: "none" }}>
                   <Button
                     variant="contained"
                     disableElevation
                     sx={{
-                      px: 3.75,
+                      px: 4,
                       py: 1.6,
-                      mt: 2,
+                      mt:5,
                       textTransform: "none",
-                      borderRadius: "5px",
+                      borderRadius: "6px",
                       fontWeight: 600,
                       fontSize: 16,
-                      "&:hover": { bgcolor: ACCENT_HOVER },
+                      bgcolor: ACCENT,
+                      boxShadow: "0 8px 24px rgba(185, 89, 47, 0.35)",
+                      "&:hover": {
+                        bgcolor: ACCENT_HOVER,
+                        boxShadow: "0 12px 30px rgba(185, 89, 47, 0.48)",
+                      },
+                      transition: "all 0.25s ease",
                     }}
                   >
                     Our Services
