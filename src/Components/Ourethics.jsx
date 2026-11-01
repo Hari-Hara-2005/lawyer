@@ -96,6 +96,7 @@ const OurEthics = () => {
         <Navbar />
 
         <Container
+          data-aos="fade-up"
           maxWidth={false}
           sx={{
             maxWidth: 1180,
@@ -159,6 +160,7 @@ const OurEthics = () => {
 
       {/* ================= INTRO ================= */}
       <Container
+        data-aos="fade-up"
         maxWidth={false}
         sx={{
           maxWidth: 1180,
@@ -227,6 +229,7 @@ const OurEthics = () => {
         }}
       >
         <Container
+          data-aos="fade-up"
           maxWidth={false}
           sx={{
             maxWidth: 1180,
@@ -331,6 +334,7 @@ const OurEthics = () => {
 
       {/* ================= SECTORS ================= */}
       <Container
+        data-aos="fade-up"
         maxWidth={false}
         sx={{
           maxWidth: 1180,
@@ -386,7 +390,7 @@ const OurEthics = () => {
           <Grid size={{ xs: 12, md: 7 }}>
             <Grid container spacing={1.5}>
               {SECTORS.map((sector, index) => (
-                <Grid key={sector} size={{ xs: 12, sm: 6 }}>
+                <Grid key={sector} size={{ xs: 12, sm: 6 }} data-aos="fade-up" data-aos-delay={(index % 2) * 80}>
                   <Box
                     sx={{
                       border: "1px solid #e4dbd5",
@@ -456,6 +460,7 @@ const OurEthics = () => {
         />
 
         <Container
+          data-aos="fade-up"
           maxWidth={false}
           sx={{
             maxWidth: 1180,

@@ -621,6 +621,7 @@ const PropertyApprovalsView = () => {
         <Navbar />
 
         <Container
+          data-aos="fade-up"
           maxWidth={false}
           sx={{
             maxWidth: 1280,
@@ -671,6 +672,7 @@ const PropertyApprovalsView = () => {
       </Box>
 
       <Container
+        data-aos="fade-up"
         maxWidth={false}
         sx={{
           maxWidth: 1280,

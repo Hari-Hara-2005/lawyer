@@ -26,6 +26,8 @@ const MapSection = () => {
 
       {/* Address Card */}
       <Box
+        data-aos="fade-right"
+        data-aos-delay="150"
         sx={{
           position: { xs: "static", md: "absolute" },
           top: { md: 24 },

@@ -12,7 +12,8 @@ import ContactSection from "../Components/ContactSection";
 import MapSection from "../Components/MapSection";
 import Footer from "../Components/Footer";
 
-const HERO_IMAGE = "/assets/legaltech-corporate.jpg";
+const HERO_IMAGE =
+  "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=2000&q=85";
 
 // Words that get typed automatically after "We Do"
 const TYPED_WORDS = [

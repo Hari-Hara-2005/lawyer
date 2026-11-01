@@ -23,7 +23,7 @@ import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
 
 const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80";
+  "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=2000&q=85";
 
 const FEATURES = [
   "15 Years Experience",

@@ -52,7 +52,7 @@ function Logo() {
       <Box
         component="img"
         src="/assets/logo.png"
-        alt="logo"
+        alt="Gen Attorneys - Ultimate Legal Solutions"
         sx={{
           height: { xs: 44, md: 70 },
           width: "auto",

@@ -75,7 +75,7 @@ function Logo({ height = { xs: 44, md: 70 } }) {
       <Box
         component="img"
         src="/assets/logo.png"
-        alt="Lawak"
+        alt="Gen Attorneys - Ultimate Legal Solutions"
         sx={{
           height,
           width: "auto",

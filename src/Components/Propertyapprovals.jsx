@@ -609,6 +609,7 @@ const PropertyApprovals = () => {
       <Box sx={{ bgcolor: "#1c1c1c", color: "#fff" }}>
         <Navbar />
         <Container
+          data-aos="fade-up"
           maxWidth={false}
           sx={{ maxWidth: 1280, px: { xs: 2.5, sm: 4 }, py: { xs: 5, md: 6 } }}
         >
@@ -627,6 +628,7 @@ const PropertyApprovals = () => {
       </Box>
 
       <Container
+        data-aos="fade-up"
         maxWidth={false}
         sx={{ maxWidth: 1280, px: { xs: 2.5, sm: 4 }, py: { xs: 5, md: 7 } }}
       >

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import GavelIcon from "@mui/icons-material/Gavel";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
@@ -7,6 +6,7 @@ import LockOpenIcon from "@mui/icons-material/LockOpen";
 import LiveTvIcon from "@mui/icons-material/LiveTv";
 import GroupsIcon from "@mui/icons-material/Groups";
 import LinkIcon from "@mui/icons-material/Link";
+import { ACCENT } from "../Theme.js";
 
 const WHATSAPP_NUMBER = "919884483327";
 
@@ -64,8 +64,6 @@ const SERVICES = [
 ];
 
 const ServicesInfo = () => {
-  const [activeCard, setActiveCard] = useState(0);
-
   return (
     <Box
       component="section"
@@ -86,7 +84,7 @@ const ServicesInfo = () => {
         <Box sx={{ textAlign: "center", mb: { xs: 5, md: 7 } }}>
           <Typography
             sx={{
-              color: "#e52b2b",
+              color: ACCENT,
               fontSize: 13,
               fontWeight: 700,
               letterSpacing: 3,
@@ -101,7 +99,7 @@ const ServicesInfo = () => {
             sx={{
               fontWeight: 800,
               fontSize: { xs: 28, sm: 36, md: 42 },
-              color: "#1a202c",
+              color: "#1a1412",
               mb: 1.5,
             }}
           >
@@ -122,7 +120,6 @@ const ServicesInfo = () => {
         </Box>
 
         <Box
-          onMouseLeave={() => setActiveCard(0)}
           sx={{
             display: "flex",
             flexWrap: "wrap",
@@ -130,12 +127,27 @@ const ServicesInfo = () => {
             gap: { xs: 2.5, sm: 3, md: 3 },
           }}
         >
-          {SERVICES.map(({ title, Icon, description }, i) => {
-            const isActive = activeCard === i;
-            return (
+          {SERVICES.map(({ title, Icon, description }, i) => (
+            <Box
+              key={title}
+              data-aos="fade-up"
+              data-aos-delay={(i % 4) * 80 + 60}
+              sx={{
+                flex: {
+                  xs: "0 0 100%",
+                  sm: "0 0 calc(50% - 16px)",
+                  md: "0 0 calc(25% - 18px)",
+                },
+                maxWidth: {
+                  xs: "100%",
+                  sm: "calc(50% - 16px)",
+                  md: "calc(25% - 18px)",
+                },
+                minWidth: { md: 260 },
+                display: "flex",
+              }}
+            >
               <Box
-                key={title}
-                onMouseEnter={() => setActiveCard(i)}
                 onClick={() => openWhatsAppQuotation(title)}
                 role="button"
                 tabIndex={0}
@@ -145,19 +157,9 @@ const ServicesInfo = () => {
                   }
                 }}
                 sx={{
-                  flex: {
-                    xs: "0 0 100%",
-                    sm: "0 0 calc(50% - 16px)",
-                    md: "0 0 calc(25% - 18px)",
-                  },
-                  maxWidth: {
-                    xs: "100%",
-                    sm: "calc(50% - 16px)",
-                    md: "calc(25% - 18px)",
-                  },
-                  minWidth: { md: 260 },
-                  bgcolor: isActive ? "#0d274d" : "#f7f8fa",
-                  color: isActive ? "#ffffff" : "#1e293b",
+                  width: "100%",
+                  bgcolor: "#fcfaf9",
+                  color: "#1a1412",
                   py: { xs: 4, md: 4.75 },
                   px: { xs: 2.5, md: 3 },
                   display: "flex",
@@ -165,68 +167,78 @@ const ServicesInfo = () => {
                   alignItems: "center",
                   textAlign: "center",
                   cursor: "pointer",
-                  borderRadius: "2px",
-                  border: "1px solid",
-                  borderColor: isActive ? "#0d274d" : "#ebecee",
-                  boxShadow: isActive
-                    ? "0 12px 28px rgba(13, 39, 77, 0.22)"
-                    : "0 2px 6px rgba(0,0,0,0.02)",
-                  transform: isActive ? "translateY(-4px)" : "none",
-                  transition: "all 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
+                  borderRadius: "4px",
+                  border: "1px solid #ebe5e1",
+                  boxShadow: "0 3px 12px rgba(0,0,0,0.03)",
                   outline: "none",
+                  transition: "transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.28s ease, background-color 0.28s ease",
                   "&:hover": {
-                    transform: "translateY(-4px)",
+                    transform: "translateY(-6px)",
+                    borderColor: ACCENT,
+                    bgcolor: "#ffffff",
+                    boxShadow: "0 16px 36px rgba(185, 89, 47, 0.16)",
+                    "& .service-card-icon": {
+                      transform: "scale(1.12)",
+                    },
+                    "& .service-card-title": {
+                      color: ACCENT,
+                    },
+                    "& .service-card-bar": {
+                      width: 48,
+                    },
                   },
                 }}
               >
                 <Icon
+                  className="service-card-icon"
                   sx={{
                     fontSize: 48,
-                    color: isActive ? "#ffffff" : "#e52b2b",
+                    color: ACCENT,
                     mb: 2.5,
-                    transition: "color 0.3s ease",
+                    transition: "transform 0.28s ease, color 0.28s ease",
                   }}
                 />
                 <Typography
                   component="h3"
+                  className="service-card-title"
                   sx={{
                     fontWeight: 700,
                     fontSize: { xs: 16.5, md: 17.5 },
-                    color: isActive ? "#ffffff" : "#1e293b",
+                    color: "#1a1412",
                     lineHeight: 1.35,
                     mb: 1.5,
                     minHeight: 52,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    transition: "color 0.3s ease",
+                    transition: "color 0.28s ease",
                   }}
                 >
                   {title}
                 </Typography>
                 <Box
+                  className="service-card-bar"
                   sx={{
-                    width: 34,
+                    width: 32,
                     height: 2.5,
-                    bgcolor: isActive ? "#ffffff" : "#e52b2b",
+                    bgcolor: ACCENT,
                     borderRadius: "1px",
                     mb: 2.25,
-                    transition: "background-color 0.3s ease",
+                    transition: "width 0.28s ease",
                   }}
                 />
                 <Typography
                   sx={{
                     fontSize: 13.5,
                     lineHeight: 1.65,
-                    color: isActive ? "rgba(255, 255, 255, 0.9)" : "#64748b",
-                    transition: "color 0.3s ease",
+                    color: "#64748b",
                   }}
                 >
                   {description}
                 </Typography>
               </Box>
-            );
-          })}
+            </Box>
+          ))}
         </Box>
       </Container>
     </Box>

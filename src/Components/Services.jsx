@@ -11,7 +11,7 @@ import SectionTitle from "../Components/SectionTitle";
 
 // Replace with your own background photo
 const BG_IMAGE =
-  "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?auto=format&fit=crop&w=1920&q=80";
+  "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&w=2000&q=85";
 
 const DARK = "#241c19";
 const TEXT =

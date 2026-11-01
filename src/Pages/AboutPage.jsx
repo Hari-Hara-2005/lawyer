@@ -14,7 +14,8 @@ import Process from "../Components/Process";
 import Coverage from "../Components/Coverage";
 import Footer from "../Components/Footer";
 
-const HERO_IMAGE = "/assets/court-gavel.jpg";
+const HERO_IMAGE =
+  "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=85";
 
 // Words that get typed automatically after "We Do"
 const TYPED_WORDS = [

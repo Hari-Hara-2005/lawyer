@@ -30,7 +30,7 @@ const SERVICE_ROWS = [
   {
     title: "Civil Cases",
     image:
-      "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1660784670019-33a36fd82515?auto=format&fit=crop&w=1200&q=85",
     points: [
       "Family Disputes",
       "Matrimonial Disputes",
@@ -49,7 +49,8 @@ const SERVICE_ROWS = [
   },
   {
     title: "Drafting & Documentations",
-    image: "/assets/legaltech-corporate.jpg",
+    image:
+      "https://images.unsplash.com/photo-1764106813759-9ef7bf42a0af?auto=format&fit=crop&w=1200&q=85",
     points: [
       "Legal Opinion/Title Due Diligence",
       "Contract Drafting",
@@ -75,7 +76,7 @@ const ServiceRow = ({ service, reverse }) => (
     alignItems="center"
     direction={reverse ? "row-reverse" : "row"}
   >
-    <Grid size={{ xs: 12, md: 6 }}>
+    <Grid size={{ xs: 12, md: 6 }} data-aos={reverse ? "fade-left" : "fade-right"}>
       <Box
         component="img"
         src={service.image}
@@ -90,7 +91,7 @@ const ServiceRow = ({ service, reverse }) => (
       />
     </Grid>
 
-    <Grid size={{ xs: 12, md: 6 }}>
+    <Grid size={{ xs: 12, md: 6 }} data-aos={reverse ? "fade-right" : "fade-left"}>
       <Typography
         sx={{
           color: ACCENT,

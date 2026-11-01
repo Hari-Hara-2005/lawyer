@@ -8,7 +8,8 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { ACCENT } from "../Theme";
 import SectionTitle from "../Components/SectionTitle";
 
-const BG_IMAGE = "/assets/teamwork-support.jpg";
+const BG_IMAGE =
+  "https://images.unsplash.com/photo-1507842229458-57774e1427a1?auto=format&fit=crop&w=2000&q=85";
 
 const REASONS = [
   {

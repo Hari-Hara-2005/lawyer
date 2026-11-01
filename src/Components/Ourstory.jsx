@@ -87,6 +87,7 @@ const OurStory = () => {
         <Navbar />
 
         <Container
+          data-aos="fade-up"
           maxWidth={false}
           sx={{
             maxWidth: 1180,
@@ -135,6 +136,7 @@ const OurStory = () => {
 
       {/* ================= INTRO ================= */}
       <Container
+        data-aos="fade-up"
         maxWidth={false}
         sx={{
           maxWidth: 1180,
@@ -353,6 +355,7 @@ const OurStory = () => {
         }}
       >
         <Container
+          data-aos="fade-up"
           maxWidth={false}
           sx={{
             maxWidth: 1180,
@@ -504,6 +507,7 @@ const OurStory = () => {
         />
 
         <Container
+          data-aos="fade-up"
           maxWidth={false}
           sx={{
             maxWidth: 1180,

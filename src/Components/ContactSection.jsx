@@ -77,7 +77,7 @@ const ContactSection = () => {
       >
         <Grid container spacing={{ xs: 6, md: 10 }}>
           {/* Left column */}
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, md: 6 }} data-aos="fade-right">
             <Typography
               sx={{
                 color: ACCENT,
@@ -162,7 +162,7 @@ const ContactSection = () => {
           </Grid>
 
           {/* Right column: form */}
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, md: 6 }} data-aos="fade-left">
             <Box
               component="form"
               onSubmit={(e) => e.preventDefault()}

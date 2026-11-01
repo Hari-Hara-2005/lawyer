@@ -4,7 +4,8 @@ import { ACCENT, ACCENT_HOVER } from "../Theme";
 import SectionTitle from "../Components/SectionTitle";
 import { Link } from "react-router-dom";
 
-const ABOUT_IMAGE = "/assets/lawyer-team.jpg";
+const ABOUT_IMAGE =
+  "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=85";
 
 const FEATURES = [
   "15 Years Experience",

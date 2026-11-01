@@ -19,6 +19,7 @@ const LegalLayout = ({ title, intro, sections }) => {
       <Box sx={{ bgcolor: "#1c1c1c", color: "#fff" }}>
         <Navbar />
         <Container
+          data-aos="fade-up"
           maxWidth={false}
           sx={{ maxWidth: 1100, px: { xs: 2.5, sm: 4 }, pt: { xs: 8, md: 12 } }}
         >
@@ -92,6 +93,7 @@ const LegalLayout = ({ title, intro, sections }) => {
 
       {/* Content */}
       <Container
+        data-aos="fade-up"
         maxWidth={false}
         sx={{ maxWidth: 860, px: { xs: 2.5, sm: 4 }, py: { xs: 6, md: 10 } }}
       >

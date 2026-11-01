@@ -13,7 +13,7 @@ import Process from "../Components/Process";
 import ServiceDetails from "../Components/ServiceDetails";
 import Footer from "../Components/Footer";
 
-const HERO_IMAGE = "/assets/digital-justice.jpg";
+const HERO_IMAGE = "/assets/court-gavel.jpg";
 
 // Words that get typed automatically after "We Do"
 const TYPED_WORDS = [

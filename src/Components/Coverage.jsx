@@ -300,12 +300,15 @@ export default function Coverage() {
               },
             }}
           >
-            <WorldMap />
+            <Box data-aos="fade-left">
+              <WorldMap />
+            </Box>
           </Grid>
         </Grid>
 
         {/* CTA Banner */}
         <Box
+          data-aos="fade-up"
           sx={{
             position: "relative",
             mt: {
