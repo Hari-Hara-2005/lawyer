@@ -5,6 +5,8 @@ import ConstructionIcon from "@mui/icons-material/Construction";
 import CorporateFareIcon from "@mui/icons-material/CorporateFare";
 import HomeWorkIcon from "@mui/icons-material/HomeWork";
 import DomainIcon from "@mui/icons-material/Domain";
+import LocationCityIcon from "@mui/icons-material/LocationCity";
+import RealEstateAgentIcon from "@mui/icons-material/RealEstateAgent";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import SectionTitle from "../Components/SectionTitle";
 
@@ -32,6 +34,14 @@ const COMPANIES = [
   {
     name: "JP ENTERPRISES",
     icon: DomainIcon,
+  },
+  {
+    name: "MARVEL VENTURES",
+    icon: LocationCityIcon,
+  },
+  {
+    name: "E&J Global Realtors",
+    icon: RealEstateAgentIcon,
   },
 ];
 
@@ -117,7 +127,7 @@ export default function FeaturedCompany() {
             gridTemplateColumns: {
               xs: "1fr",
               sm: "repeat(2, 1fr)",
-              md: "repeat(3, 1fr)",
+              lg: "repeat(4, 1fr)",
             },
             gap: { xs: 2, md: 2.5 },
           }}
@@ -126,7 +136,7 @@ export default function FeaturedCompany() {
             <Box
               key={name}
               data-aos="fade-up"
-              data-aos-delay={(index % 3) * 100 + 80}
+              data-aos-delay={(index % 4) * 80 + 80}
               sx={{
                 position: "relative",
                 minHeight: { xs: 125, md: 145 },

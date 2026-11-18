@@ -7,6 +7,8 @@ import ConstructionIcon from "@mui/icons-material/Construction";
 import CorporateFareIcon from "@mui/icons-material/CorporateFare";
 import HomeWorkIcon from "@mui/icons-material/HomeWork";
 import DomainIcon from "@mui/icons-material/Domain";
+import LocationCityIcon from "@mui/icons-material/LocationCity";
+import RealEstateAgentIcon from "@mui/icons-material/RealEstateAgent";
 
 import { ACCENT, ACCENT_HOVER } from "../Theme";
 import SectionTitle from "../Components/SectionTitle";
@@ -46,6 +48,14 @@ const COMPANIES = [
   {
     name: "JP ENTERPRISES",
     icon: DomainIcon,
+  },
+  {
+    name: "MARVEL VENTURES",
+    icon: LocationCityIcon,
+  },
+  {
+    name: "E&J Global Realtors",
+    icon: RealEstateAgentIcon,
   },
 ];
 
@@ -347,7 +357,7 @@ export default function Coverage() {
               gridTemplateColumns: {
                 xs: "1fr",
                 sm: "repeat(2, 1fr)",
-                md: "repeat(3, 1fr)",
+                md: "repeat(4, 1fr)",
               },
 
               rowGap: {
